@@ -1394,49 +1394,41 @@ function showUniverse(key, cardEl) {
   const content = document.getElementById('detail-content');
 
   if(d.comingSoon) {
-    content.innerHTML = `
-      <div class="coming-soon-page">
-        <div class="cs-icon">⚡</div>
-        <div class="cs-title">Tesclar</div>
-        <p class="cs-desc">${currentLang==='cn'?'FrancislArtIste最具电气化的宇宙。融合爵士、放克、电子。':currentLang==='en'?'The most electric universe of FrancislArtIste. Jazz, funk and electro.':'L'univers le plus électrique de FrancislArtIste. Jazz, funk et électro.'}</p>
-        <div class="cs-preview">
-          <div class="playlist-embed"><iframe src="https://www.youtube.com/embed/${d.previewId}?rel=0" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe></div>
-        </div>
-        <a href="${d.playlist}" target="_blank" rel="noopener" class="playlist-link">▶ ${currentLang==='cn'?'查看播放列表':currentLang==='en'?'See playlist':'Voir la playlist YouTube'}</a>
-      </div>`;
+    const csDesc = currentLang==='cn' ? 'FrancislArtIste最具电气化的宇宙。融合爵士、放克、电子。' :
+                   currentLang==='en' ? 'The most electric universe of FrancislArtIste. Jazz, funk and electro.' :
+                   'Univers electrique de FrancislArtIste. Jazz, funk et electro.';
+    const csLink = currentLang==='cn' ? '查看播放列表' : currentLang==='en' ? 'See playlist' : 'Voir la playlist YouTube';
+    content.innerHTML = '<div class="coming-soon-page"><div class="cs-icon">⚡</div><div class="cs-title">Tesclar</div><p class="cs-desc">' + csDesc + '</p><div class="cs-preview"><div class="playlist-embed"><iframe src="https://www.youtube.com/embed/' + d.previewId + '?rel=0" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe></div></div><a href="' + d.playlist + '" target="_blank" rel="noopener" class="playlist-link">▶ ' + csLink + '</a></div>';
     return;
   }
 
   if(d.albums) {
     const extras = JSON.parse(localStorage.getItem('fa_extras_'+key)||'[]');
     const all = [...d.albums, ...extras];
-    content.innerHTML = `<div class="album-grid">${all.map(a=>`
-      <a class="album-card" href="${a.url}" target="_blank" rel="noopener">
-        <div class="album-thumb">${a.thumb?`<img src="${a.thumb}" style="width:100%;height:100%;object-fit:cover"/>`:a.icon||'🎵'}</div>
-        <div class="album-info">
-          <div class="album-name">${a.name}</div>
-          <div class="album-sub">FrancislArtIste</div>
-        </div>
-      </a>`).join('')}</div>`;
+    content.innerHTML = '<div class="album-grid">' + all.map(function(a) {
+      var thumb = a.thumb ? '<img src="' + a.thumb + '" style="width:100%;height:100%;object-fit:cover"/>' : (a.icon || '🎵');
+      return '<a class="album-card" href="' + a.url + '" target="_blank" rel="noopener"><div class="album-thumb">' + thumb + '</div><div class="album-info"><div class="album-name">' + a.name + '</div><div class="album-sub">FrancislArtIste</div></div></a>';
+    }).join('') + '</div>';
   }
 
   if(d.episodes) {
     const langLabel = {fr:'🇫🇷 Français',en:'🇬🇧 English',cn:'🇨🇳 中文'};
-    content.innerHTML = `<div class="episode-grid">${d.episodes.map(ep=>{
-      const name = ep['name_'+currentLang] || ep.name_fr;
-      const langs = ['fr','en','cn'].map(l => {
-        if(!ep[l] && !ep.coming) return '';
-        if(ep.coming) return `<span class="lang-pill ${l}" style="opacity:.4;cursor:default">${langLabel[l]} ${currentLang==='cn'?'即将推出':currentLang==='en'?'(soon)':'(bientôt)'}</span>`;
-        if(!ep[l]) return `<span class="lang-pill ${l}" style="opacity:.3;cursor:default">${langLabel[l]}</span>`;
-        return `<a class="lang-pill ${l}" href="${ep[l]}" target="_blank" rel="noopener">${langLabel[l]}</a>`;
-      }).join('');
-      const special = ep['special_'+currentLang] ? `<div class="episode-soon">${ep['special_'+currentLang]}</div>` : '';
-      return `<div class="episode-card">
-        <div class="episode-title">🎭 ${name}</div>
-        ${special}
-        <div class="episode-langs">${langs}</div>
-      </div>`;
-    }).join('')}</div>`;
+    var epHTML = '<div class="episode-grid">';
+    d.episodes.forEach(function(ep) {
+      var name = ep['name_'+currentLang] || ep.name_fr;
+      var langsHTML = '';
+      ['fr','en','cn'].forEach(function(l) {
+        if(!ep[l] && !ep.coming) return;
+        if(ep.coming) { langsHTML += '<span class="lang-pill ' + l + '" style="opacity:.4;cursor:default">' + langLabel[l] + ' ' + (currentLang==='cn'?'即将推出':currentLang==='en'?'(soon)':'(bientot)') + '</span>'; return; }
+        if(!ep[l]) { langsHTML += '<span class="lang-pill ' + l + '" style="opacity:.3;cursor:default">' + langLabel[l] + '</span>'; return; }
+        langsHTML += '<a class="lang-pill ' + l + '" href="' + ep[l] + '" target="_blank" rel="noopener">' + langLabel[l] + '</a>';
+      });
+      var special = ep['special_'+currentLang] ? '<div class="episode-soon">' + ep['special_'+currentLang] + '</div>' : '';
+      epHTML += '<div class="episode-card"><div class="episode-title">🎭 ' + name + '</div>' + special + '<div class="episode-langs">' + langsHTML + '</div></div>';
+    });
+    epHTML += '</div>';
+    content.innerHTML = epHTML;
+
   }
 }
 
