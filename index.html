@@ -17,65 +17,7 @@
 html{scroll-behavior:smooth}
 body{background:var(--black);color:var(--text);font-family:'Lato',sans-serif;overflow-x:hidden}
 
-/* ══════════════ INTRO ══════════════ */
-#intro{
-  position:fixed;inset:0;z-index:1000;background:#000;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  transition:opacity .8s ease;
-}
-#star-canvas{
-  position:absolute;inset:0;width:100%;height:100%;
-}
-#intro.hidden{opacity:0;pointer-events:none}
-#intro-video{
-  position:absolute;inset:0;width:100%;height:100%;
-  object-fit:cover;opacity:.85;
-}
-#intro-overlay{
-  position:relative;z-index:2;
-  display:flex;flex-direction:column;align-items:center;gap:2.5rem;
-  text-align:center;padding:2rem;
-}
-#intro-logo{
-  width:180px;height:180px;object-fit:contain;mix-blend-mode:multiply;background:transparent;
-  filter:drop-shadow(0 0 30px rgba(224,32,32,.4)) drop-shadow(0 0 60px rgba(255,140,0,.2));
-  animation:logoPulse 3s ease-in-out infinite;
-}
-@keyframes logoPulse{0%,100%{filter:drop-shadow(0 0 20px rgba(224,32,32,.3))}50%{filter:drop-shadow(0 0 50px rgba(255,140,0,.6))}}
-#intro-title{
-  font-family:'Montserrat',sans-serif;font-size:clamp(1.8rem,5vw,3rem);font-weight:900;
-  letter-spacing:.05em;
-  background:linear-gradient(135deg,var(--orange),var(--red),var(--red),var(--orange));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-}
-#intro-sub{font-size:.8rem;color:#888;letter-spacing:.3em;text-transform:uppercase}
-.lang-selector{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
-.lang-btn{
-  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.15);
-  color:#fff;padding:.6rem 1.4rem;border-radius:50px;cursor:pointer;
-  font-family:'Lato',sans-serif;font-size:.9rem;
-  display:flex;align-items:center;gap:.5rem;
-  transition:all .2s;
-}
-.lang-btn:hover{background:rgba(224,32,32,.2);border-color:var(--red)}
-.lang-btn.active{background:rgba(224,32,32,.3);border-color:var(--red);color:var(--orange)}
-.flag{font-size:1.2rem}
-#enter-btn{
-  background:#E02020;
-  border:none;color:#fff;padding:.9rem 3rem;border-radius:50px;
-  font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:700;
-  letter-spacing:.1em;cursor:pointer;text-transform:uppercase;
-  transition:all .3s;box-shadow:0 0 30px rgba(224,32,32,.3);
-}
-#enter-btn:hover{transform:translateY(-2px);box-shadow:0 0 50px rgba(255,140,0,.5)}
-#skip-btn{
-  background:none;border:none;color:#555;font-size:.75rem;
-  cursor:pointer;font-family:'Lato',sans-serif;letter-spacing:.1em;
-  text-decoration:underline;transition:color .2s;
-}
-#skip-btn:hover{color:#888}
-
-/* ══════════════ MAIN SITE ══════════════ */
+/* ══════ MAIN SITE ══════════════ */
 #main-site{opacity:1;transition:opacity .8s ease;pointer-events:auto;display:block}
 #main-site.visible{opacity:1;pointer-events:all}
 
@@ -620,21 +562,8 @@ footer{
 </head>
 <body>
 
-<!-- ═══════════════ INTRO ═══════════════ -->
-<div id="intro">
-  <canvas id="star-canvas"></canvas>
-  
-  <div id="intro-overlay">
-    <div>
-      <div id="intro-title">FrancislArtIste</div>
-      <div id="intro-sub">Univers Musicaux</div>
-    </div>
-    <button id="enter-btn" onclick="enterSite()">ENTRER</button>
-    <button id="skip-btn" onclick="enterSite()">Passer l'intro</button>
-  </div>
-
 <!-- ═══════════════ MAIN SITE ═══════════════ -->
-<div id="main-site">
+<div id="main-site" style="opacity:1;display:block;pointer-events:auto">
 
 <!-- HEADER -->
 <header>
@@ -1326,30 +1255,13 @@ function setLang(lang) {
   } catch(e) { console.error('setLang error:', e); }
 }
 
-/* ══════ INTRO ══════ */
-function enterSite() {
-  const intro = document.getElementById('intro');
-  if(intro) { intro.style.display = 'none'; }
-  setTimeout(() => { try { setLang(currentLang); } catch(e){} }, 100);
-}
 
-function replayIntro() {
-  const intro = document.getElementById('intro');
-  const main = document.getElementById('main-site');
-  if(intro) intro.classList.remove('hidden');
-  if(main) { main.classList.remove('visible'); main.style.opacity='0'; }
-  const v = document.getElementById('intro-video');
-  if(v) { v.currentTime = 0; v.play().catch(()=>{}); }
-}
+function replayIntro() { /* intro supprimée */ }
 
-// Pas de vidéo - auto-skip après 5 secondes
-setTimeout(enterSite, 5000);
+
 
 // Init au chargement
 window.addEventListener('DOMContentLoaded', () => {
-  if(sessionStorage.getItem('fa_entered')) {
-    enterSite();
-  }
   setLang(currentLang);
   if(pароlesUnlocked) renderSongList();
 });
@@ -1522,69 +1434,7 @@ function removeExtra(sec,i) {
 
 /* ══════ INIT ══════ */
 
-/* ══════ ANIMATION ÉTOILES INTRO ══════ */
-(function() {
-  const canvas = document.getElementById('star-canvas');
-  if(!canvas) return;
-  const ctx = canvas.getContext('2d');
-  let W, H, stars = [], animId;
 
-  function resize() {
-    W = canvas.width = window.innerWidth;
-    H = canvas.height = window.innerHeight;
-  }
-
-  function initStars(n) {
-    stars = [];
-    for(let i=0; i<n; i++) {
-      stars.push({
-        x: Math.random()*W,
-        y: Math.random()*H,
-        r: Math.random()*1.5+0.2,
-        speed: Math.random()*0.3+0.05,
-        opacity: Math.random(),
-        twinkle: Math.random()*0.02+0.005,
-        dir: Math.random()>0.5?1:-1
-      });
-    }
-  }
-
-  function draw() {
-    ctx.clearRect(0,0,W,H);
-    // Fond dégradé radial
-    const grad = ctx.createRadialGradient(W/2,H/2,0,W/2,H/2,Math.max(W,H)/1.5);
-    grad.addColorStop(0,'rgba(40,0,0,0.4)');
-    grad.addColorStop(1,'rgba(0,0,0,0)');
-    ctx.fillStyle = grad;
-    ctx.fillRect(0,0,W,H);
-
-    // Étoiles
-    stars.forEach(s => {
-      s.opacity += s.twinkle * s.dir;
-      if(s.opacity > 1 || s.opacity < 0) s.dir *= -1;
-      s.y -= s.speed;
-      if(s.y < -2) { s.y = H+2; s.x = Math.random()*W; }
-      ctx.beginPath();
-      ctx.arc(s.x, s.y, s.r, 0, Math.PI*2);
-      ctx.fillStyle = `rgba(255,${200+Math.random()*55},${200+Math.random()*55},${s.opacity})`;
-      ctx.fill();
-    });
-
-    // Lueur centrale rouge
-    const glow = ctx.createRadialGradient(W/2,H/2,0,W/2,H/2,200);
-    glow.addColorStop(0,'rgba(180,0,0,0.15)');
-    glow.addColorStop(1,'rgba(0,0,0,0)');
-    ctx.fillStyle = glow;
-    ctx.fillRect(0,0,W,H);
-
-    animId = requestAnimationFrame(draw);
-  }
-
-  resize();
-  initStars(200);
-  draw();
-  window.addEventListener('resize', () => { resize(); initStars(200); });
-})();
 
 </script>
 </body>
