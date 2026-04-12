@@ -12,7 +12,7 @@ body{background:#000;color:#fff;font-family:'Lato',sans-serif;min-height:100vh}
 /* HEADER */
 header{background:#0a0a0a;border-bottom:1px solid #222;padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;position:sticky;top:0;z-index:100}
 .logo{display:flex;align-items:center;gap:1rem;cursor:pointer;text-decoration:none}
-.logo img{width:52px;height:52px;object-fit:contain}
+.logo img{width:52px;height:52px;object-fit:contain;mix-blend-mode:multiply}
 .logo-text{font-family:'Montserrat',sans-serif;font-size:1.3rem;font-weight:900;color:#E02020}
 .logo-sub{font-size:.65rem;color:#666;letter-spacing:.15em;text-transform:uppercase}
 nav{display:flex;align-items:center;gap:.4rem;flex-wrap:wrap}
@@ -238,12 +238,14 @@ body.light .pembed{border-color:#ddd}
 #theme-toggle{background:none;border:1px solid #333;color:#aaa;width:2.2rem;height:2.2rem;border-radius:50%;cursor:pointer;font-size:.85rem;transition:all .2s;display:flex;align-items:center;justify-content:center}
 #theme-toggle:hover{border-color:#E02020;color:#E02020}
 body.light #theme-toggle{border-color:#ddd;color:#555}
+body:not(.light) .logo img{mix-blend-mode:screen}
+body:not(.light) .apropos-logo{mix-blend-mode:screen}
 body.light #theme-toggle:hover{border-color:#E02020;color:#E02020}
 
 
 .apropos-grid{display:grid;grid-template-columns:180px 1fr;gap:3rem;align-items:start}
 @media(max-width:700px){.apropos-grid{grid-template-columns:1fr}}
-.apropos-logo{width:150px;height:150px;object-fit:contain;margin:0 auto;display:block}
+.apropos-logo{width:150px;height:150px;object-fit:contain;margin:0 auto;display:block;mix-blend-mode:multiply}
 .apropos-text h2{font-family:'Montserrat',sans-serif;font-size:1.6rem;font-weight:700;margin-bottom:1.5rem;color:#E02020}
 .apropos-text p{color:#bbb;line-height:1.9;margin-bottom:1.2rem;font-size:.92rem}
 .apropos-text strong{color:#fff;font-weight:700}
