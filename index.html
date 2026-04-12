@@ -76,7 +76,7 @@ body{background:var(--black);color:var(--text);font-family:'Lato',sans-serif;ove
 #skip-btn:hover{color:#888}
 
 /* ══════════════ MAIN SITE ══════════════ */
-#main-site{opacity:0;transition:opacity .8s ease;pointer-events:none;display:block}
+#main-site{opacity:1;transition:opacity .8s ease;pointer-events:auto;display:block}
 #main-site.visible{opacity:1;pointer-events:all}
 
 /* HEADER */
@@ -1329,21 +1329,8 @@ function setLang(lang) {
 /* ══════ INTRO ══════ */
 function enterSite() {
   const intro = document.getElementById('intro');
-  const main = document.getElementById('main-site');
-  if(intro) {
-    intro.style.opacity = '0';
-    intro.style.pointerEvents = 'none';
-    intro.style.visibility = 'hidden';
-    setTimeout(() => { intro.style.display = 'none'; }, 900);
-  }
-  if(main) {
-    main.style.display = 'block';
-    main.style.opacity = '1';
-    main.style.pointerEvents = 'auto';
-    main.classList.add('visible');
-  }
-  sessionStorage.setItem('fa_entered', '1');
-  setTimeout(() => { try { setLang(currentLang); } catch(e){} }, 200);
+  if(intro) { intro.style.display = 'none'; }
+  setTimeout(() => { try { setLang(currentLang); } catch(e){} }, 100);
 }
 
 function replayIntro() {
