@@ -252,6 +252,57 @@ body.light #theme-toggle:hover{border-color:#E02020;color:#E02020}
 body.light .apropos-text p{color:#444}
 body.light .apropos-text strong{color:#111}
 
+
+/* BACK OFFICE */
+#bo-overlay{display:none;position:fixed;inset:0;z-index:500;background:rgba(0,0,0,.95);backdrop-filter:blur(8px);overflow-y:auto}
+#bo-overlay.open{display:block}
+.bo-container{max-width:900px;margin:0 auto;padding:2rem}
+.bo-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:2rem;padding-bottom:1rem;border-bottom:1px solid #222}
+.bo-header h2{font-family:'Montserrat',sans-serif;font-size:1.4rem;font-weight:700;color:#E02020}
+.bo-close{background:none;border:1px solid #333;color:#777;padding:.4rem 1rem;border-radius:50px;cursor:pointer;font-family:'Lato',sans-serif;font-size:.82rem;transition:all .2s}
+.bo-close:hover{border-color:#fff;color:#fff}
+.bo-tabs{display:flex;gap:.5rem;margin-bottom:2rem;flex-wrap:wrap}
+.bo-tab{background:none;border:1px solid #333;color:#777;padding:.4rem 1rem;border-radius:50px;cursor:pointer;font-family:'Lato',sans-serif;font-size:.82rem;transition:all .2s}
+.bo-tab:hover{border-color:#E02020;color:#E02020}
+.bo-tab.active{background:rgba(224,32,32,.15);border-color:#E02020;color:#E02020}
+.bo-panel{display:none}
+.bo-panel.active{display:block}
+.bo-section{background:#0d0d0d;border:1px solid #1a1a1a;border-radius:12px;padding:1.5rem;margin-bottom:1.5rem}
+.bo-section h3{font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:700;color:#fff;margin-bottom:1rem}
+.bo-form{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-bottom:1rem}
+@media(max-width:600px){.bo-form{grid-template-columns:1fr}}
+.bo-field{display:flex;flex-direction:column;gap:.3rem}
+.bo-field label{font-size:.72rem;color:#666;text-transform:uppercase;letter-spacing:.08em}
+.bo-field input,.bo-field select,.bo-field textarea{background:#111;border:1px solid #222;color:#eee;padding:.6rem .9rem;border-radius:8px;font-family:'Lato',sans-serif;font-size:.85rem;width:100%}
+.bo-field input:focus,.bo-field select:focus,.bo-field textarea:focus{outline:none;border-color:#E02020}
+.bo-field.full{grid-column:1/-1}
+.bo-btn{background:#E02020;border:none;color:#fff;padding:.6rem 1.5rem;border-radius:50px;cursor:pointer;font-family:'Montserrat',sans-serif;font-size:.82rem;font-weight:700;transition:opacity .2s}
+.bo-btn:hover{opacity:.85}
+.bo-btn.secondary{background:transparent;border:1px solid #333;color:#777}
+.bo-btn.secondary:hover{border-color:#fff;color:#fff;opacity:1}
+.bo-list{display:flex;flex-direction:column;gap:.5rem;margin-top:1rem}
+.bo-item{display:flex;align-items:center;justify-content:space-between;padding:.7rem 1rem;background:#111;border:1px solid #1a1a1a;border-radius:8px}
+.bo-item-info{font-size:.82rem;color:#aaa;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bo-item-name{font-weight:700;color:#fff;margin-right:.5rem}
+.bo-item-del{background:none;border:1px solid #c44;color:#c44;padding:.3rem .7rem;border-radius:50px;cursor:pointer;font-size:.72rem;transition:all .2s;flex-shrink:0}
+.bo-item-del:hover{background:rgba(200,68,68,.15)}
+.bo-empty{font-size:.8rem;color:#444;font-style:italic;padding:.5rem 0}
+
+/* AUTH */
+#bo-auth{display:none;position:fixed;inset:0;z-index:600;background:rgba(0,0,0,.97);display:flex;align-items:center;justify-content:center}
+#bo-auth.hidden{display:none}
+.auth-box{background:#0d0d0d;border:1px solid #E02020;border-radius:16px;padding:2rem;width:100%;max-width:380px;text-align:center}
+.auth-box h3{font-family:'Montserrat',sans-serif;font-size:1.2rem;font-weight:700;color:#E02020;margin-bottom:.5rem}
+.auth-box p{font-size:.82rem;color:#666;margin-bottom:1.5rem}
+.auth-step{display:none}
+.auth-step.active{display:block}
+.auth-input{width:100%;background:#111;border:1px solid #333;color:#eee;padding:.8rem 1rem;border-radius:8px;font-family:'Lato',sans-serif;font-size:1rem;text-align:center;margin-bottom:1rem;letter-spacing:.1em}
+.auth-input:focus{outline:none;border-color:#E02020}
+.auth-err{font-size:.78rem;color:#c44;margin-bottom:.8rem;min-height:1.2rem}
+.qr-container{background:#fff;padding:1rem;border-radius:8px;display:inline-block;margin-bottom:1rem}
+.qr-container img{width:180px;height:180px;display:block}
+.auth-secret{font-size:.72rem;color:#666;word-break:break-all;margin-bottom:1rem;font-family:monospace;background:#111;padding:.5rem;border-radius:6px}
+
 /* ADMIN */
 #admin-toggle{position:fixed;bottom:1.5rem;right:1.5rem;z-index:50;width:2.4rem;height:2.4rem;background:rgba(224,32,32,.1);border:1px solid rgba(224,32,32,.2);border-radius:50%;cursor:pointer;font-size:.85rem;transition:all .2s;display:flex;align-items:center;justify-content:center}
 #admin-toggle:hover{background:rgba(224,32,32,.2)}
@@ -504,40 +555,129 @@ We don't fight, we translate</div>
 </div>
 
 <!-- ADMIN -->
-<button id="admin-toggle" onclick="toggleAdmin()" title="Admin">⚙</button>
-<div id="admin-panel">
-  <h4>⚙ Ajouter un contenu</h4>
-  <div class="aform">
-    <select id="asec"><option value="poemes">Poèmes</option><option value="animaux">Animaux</option><option value="broken">Broken Strings</option><option value="tesclar">Tesclar</option></select>
-    <input type="text" id="aname" placeholder="Nom / Titre"/>
-    <input type="text" id="aurl" placeholder="URL YouTube"/>
-    <button class="aform-btn" onclick="adminAdd()">+ Ajouter</button>
+<button id="admin-toggle" onclick="openBO()" title="Administration">⚙</button>
+
+<!-- AUTH MODAL -->
+<div id="bo-auth">
+  <div class="auth-box">
+    <h3>🔐 Administration</h3>
+    
+    <!-- Étape 1 : mot de passe -->
+    <div class="auth-step active" id="auth-step1">
+      <p>Entrez votre mot de passe</p>
+      <input class="auth-input" type="password" id="auth-pwd" placeholder="••••••••" onkeydown="if(event.key==='Enter')checkPwd()"/>
+      <div class="auth-err" id="auth-err1"></div>
+      <button class="bo-btn" onclick="checkPwd()">CONTINUER</button>
+    </div>
+
+    <!-- Étape 2 : QR code première fois -->
+    <div class="auth-step" id="auth-step2">
+      <p>Scannez ce QR code avec Google Authenticator</p>
+      <div class="qr-container">
+        <img id="qr-img" alt="QR Code"/>
+      </div>
+      <div class="auth-secret">Clé manuelle : TRHG5UQZY6PPSY3S3ADGP4M4INOM47DV</div>
+      <button class="bo-btn" onclick="showStep(3)">J'AI SCANNÉ →</button>
+    </div>
+
+    <!-- Étape 3 : code TOTP -->
+    <div class="auth-step" id="auth-step3">
+      <p>Entrez le code Google Authenticator</p>
+      <input class="auth-input" type="number" id="auth-totp" placeholder="000000" maxlength="6" onkeydown="if(event.key==='Enter')checkTOTP()"/>
+      <div class="auth-err" id="auth-err3"></div>
+      <button class="bo-btn" onclick="checkTOTP()">ACCÉDER</button>
+    </div>
   </div>
-  <div class="alist" id="alist"></div>
 </div>
 
+<!-- BACK OFFICE -->
+<div id="bo-overlay">
+  <div class="bo-container">
+    <div class="bo-header">
+      <h2>⚙ Back Office — FrancislArtIste</h2>
+      <button class="bo-close" onclick="closeBO()">✕ Fermer</button>
+    </div>
+    <div class="bo-tabs">
+      <button class="bo-tab active" onclick="boTab('playlists')">🎵 Playlists</button>
+      <button class="bo-tab" onclick="boTab('animaux')">🎭 Animaux</button>
+    </div>
 
-<div id="page-apropos" class="page">
-  <div class="section">
-    <div class="sec-label">FrancislArtIste</div>
-    <div class="sec-title">À propos</div>
-    <div class="apropos-grid">
-      <div>
-        <img id="logo-apropos" class="apropos-logo" alt="FrancislArtIste"/>
+    <!-- PANEL PLAYLISTS -->
+    <div id="bo-playlists" class="bo-panel active">
+      <div class="bo-section">
+        <h3>Ajouter une playlist / album</h3>
+        <div class="bo-form">
+          <div class="bo-field">
+            <label>Univers</label>
+            <select id="bo-univers">
+              <option value="poemes">Poèmes en Chanson</option>
+              <option value="broken">Broken Strings</option>
+              <option value="tesclar">Tesclar</option>
+            </select>
+          </div>
+          <div class="bo-field">
+            <label>Nom de l'album</label>
+            <input type="text" id="bo-album-name" placeholder="Ex: Nouvel Album 2026"/>
+          </div>
+          <div class="bo-field full">
+            <label>URL YouTube (playlist)</label>
+            <input type="text" id="bo-album-url" placeholder="https://www.youtube.com/playlist?list=..."/>
+          </div>
+          <div class="bo-field">
+            <label>Icône (emoji)</label>
+            <input type="text" id="bo-album-icon" placeholder="🎵" maxlength="4"/>
+          </div>
+        </div>
+        <button class="bo-btn" onclick="boAddAlbum()">+ AJOUTER</button>
       </div>
-      <div class="apropos-text">
-        <h2>Ma démarche artistique</h2>
-        <p><strong>L'IA générative de musique ne fait que créer un nouveau style.</strong> Dans les années 70-80, les synthétiseurs ont bouleversé la création musicale. Aujourd'hui, l'IA fait la même chose. La voix étant un son, une modulation de fréquences, l'IA devient à son tour un instrument. Un outil, ni plus ni moins. Comme il fut un jour plus simple de passer du clavecin au piano, puis du piano au synthétiseur.</p>
-        <p>Alors oui, mes chansons sont générées par l'IA. Mais il y a toujours une source d'écriture humaine. <strong>Les mots viennent de moi, de mon vécu, de mes émotions.</strong> Et même de mon ignorance des instruments et du solfège naît quelque chose d'intime et d'authentique.</p>
-        <p>J'ai l'intime conviction que la musique suit toujours la langue de l'artiste qui la compose. Dans le cas de l'IA générative, les mots portent déjà une mélodie, et leur enchaînement crée une musique : parfois fluide, parfois dissonante.</p>
-        <p><strong>Mon processus d'écriture n'est pas calculé.</strong> Les textes sortent de moi parce qu'ils doivent sortir. Et dans la manière dont ils surgissent, un rythme se dessine, une identité musicale se crée. Cette identité, l'IA la décode et l'interprète — d'une manière presque magique. Et chaque fois, je reste impressionné.</p>
-        <p>Dans mes oeuvres, les idées et les textes expriment une part intime de moi. Je pars toujours d'un sujet, d'un concept, et j'essaie de l'amener en chanson. <strong>Un objectif : trouver l'universel.</strong> Une chanson qui parlera à tous, mais différemment à chacun, par la force des mots et de la mélodie.</p>
-        <p>Certaines chansons sont écrites pour les femmes. J'essaie alors de me mettre dans leur peau, de ressentir leur vécu. C'est un exercice difficile, mais précieux.</p>
-        <p>Je ne suis pas un musicien virtuose. Mais depuis l'enfance, la musique est un langage que je connais intimement. J'aime les belles mélodies. <strong>J'aime la musique quand elle vous remue le ventre et tire de vous la substantifique moelle.</strong></p>
-        <p>Ecrire ces textes a généré beaucoup d'émotion en moi. Parfois de la joie, parfois de la douleur. Mais toujours avec ce sentiment que quelque chose de vrai passait à travers. <strong>L'écriture restera mon chemin, ma voix intérieure.</strong></p>
-        <p style="font-style:italic;color:#555;font-size:.83rem;border-top:1px solid #1a1a1a;padding-top:1rem;margin-top:.5rem">Toutes les chansons n'ont pas été écrites à 100% par moi-même. Elles sont parfois co-inspirées, parfois co-écrites. Merci à celles qui m'ont aidé et qui se reconnaîtront.</p>
+      <div class="bo-section">
+        <h3>Playlists ajoutées</h3>
+        <div id="bo-albums-list"></div>
       </div>
     </div>
+
+    <!-- PANEL ANIMAUX -->
+    <div id="bo-animaux" class="bo-panel">
+      <div class="bo-section">
+        <h3>Ajouter un épisode</h3>
+        <div class="bo-form">
+          <div class="bo-field">
+            <label>Nom FR</label>
+            <input type="text" id="bo-ep-fr-name" placeholder="Ex: Tigre"/>
+          </div>
+          <div class="bo-field">
+            <label>Nom EN</label>
+            <input type="text" id="bo-ep-en-name" placeholder="Ex: Tiger"/>
+          </div>
+          <div class="bo-field">
+            <label>Nom CN</label>
+            <input type="text" id="bo-ep-cn-name" placeholder="Ex: 老虎"/>
+          </div>
+          <div class="bo-field">
+            <label>URL Playlist FR</label>
+            <input type="text" id="bo-ep-fr-url" placeholder="URL YouTube FR"/>
+          </div>
+          <div class="bo-field">
+            <label>URL Playlist EN</label>
+            <input type="text" id="bo-ep-en-url" placeholder="URL YouTube EN"/>
+          </div>
+          <div class="bo-field">
+            <label>URL Playlist CN</label>
+            <input type="text" id="bo-ep-cn-url" placeholder="URL YouTube CN"/>
+          </div>
+          <div class="bo-field full">
+            <label>Note spéciale (optionnel)</label>
+            <input type="text" id="bo-ep-note" placeholder="Ex: Edition spéciale..."/>
+          </div>
+        </div>
+        <button class="bo-btn" onclick="boAddEpisode()">+ AJOUTER L'ÉPISODE</button>
+      </div>
+      <div class="bo-section">
+        <h3>Épisodes ajoutés</h3>
+        <div id="bo-episodes-list"></div>
+      </div>
+    </div>
+
   </div>
 </div>
 
@@ -819,6 +959,189 @@ function toggleTheme() {
   applyTheme();
 }
 applyTheme();
+
+
+/* ── BACK OFFICE ── */
+var BO_PWD = 'FAI123';
+var BO_SECRET = 'TRHG5UQZY6PPSY3S3ADGP4M4INOM47DV';
+var bo_setup_done = localStorage.getItem('bo_setup') === '1';
+var bo_auth_step = 1;
+
+/* TOTP */
+function b32decode(s) {
+  var alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ234567';
+  var bits = 0, val = 0, out = [];
+  s = s.replace(/=/g,'').toUpperCase();
+  for (var i=0; i<s.length; i++) {
+    val = (val << 5) | alphabet.indexOf(s[i]);
+    bits += 5;
+    if (bits >= 8) { bits -= 8; out.push((val >> bits) & 255); }
+  }
+  return new Uint8Array(out);
+}
+
+async function getTOTP() {
+  var t = Math.floor(Date.now() / 30000);
+  var key = b32decode(BO_SECRET);
+  var cryptoKey = await crypto.subtle.importKey('raw', key, {name:'HMAC',hash:'SHA-1'}, false, ['sign']);
+  var buf = new ArrayBuffer(8);
+  new DataView(buf).setUint32(4, t, false);
+  var sig = await crypto.subtle.sign('HMAC', cryptoKey, buf);
+  var h = new Uint8Array(sig);
+  var offset = h[19] & 0xf;
+  var code = ((h[offset]&0x7f)<<24|(h[offset+1]&0xff)<<16|(h[offset+2]&0xff)<<8|(h[offset+3]&0xff)) % 1000000;
+  return String(code).padStart(6,'0');
+}
+
+function openBO() {
+  document.getElementById('bo-auth').style.display = 'flex';
+  document.getElementById('auth-pwd').value = '';
+  document.getElementById('auth-totp').value = '';
+  document.getElementById('auth-err1').textContent = '';
+  document.getElementById('auth-err3').textContent = '';
+  showStep(1);
+}
+
+function showStep(n) {
+  document.querySelectorAll('.auth-step').forEach(function(s){s.classList.remove('active');});
+  document.getElementById('auth-step'+n).classList.add('active');
+  if (n === 2) {
+    // Générer QR code via API gratuite
+    var qrUrl = 'https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=' + encodeURIComponent('otpauth://totp/FrancislArtIste%20Admin?secret=TRHG5UQZY6PPSY3S3ADGP4M4INOM47DV&issuer=FrancislArtIste&algorithm=SHA1&digits=6&period=30');
+    document.getElementById('qr-img').src = qrUrl;
+  }
+}
+
+function checkPwd() {
+  var pwd = document.getElementById('auth-pwd').value;
+  if (pwd !== BO_PWD) {
+    document.getElementById('auth-err1').textContent = 'Mot de passe incorrect';
+    return;
+  }
+  if (!bo_setup_done) {
+    showStep(2);
+  } else {
+    showStep(3);
+    setTimeout(function(){document.getElementById('auth-totp').focus();}, 100);
+  }
+}
+
+async function checkTOTP() {
+  var input = document.getElementById('auth-totp').value.trim();
+  var valid = await getTOTP();
+  // Vérifier aussi le code précédent (30s de tolérance)
+  var t = Math.floor(Date.now() / 30000);
+  var key = b32decode(BO_SECRET);
+  var cryptoKey = await crypto.subtle.importKey('raw', key, {name:'HMAC',hash:'SHA-1'}, false, ['sign']);
+  var buf = new ArrayBuffer(8);
+  new DataView(buf).setUint32(4, t-1, false);
+  var sig = await crypto.subtle.sign('HMAC', cryptoKey, buf);
+  var h = new Uint8Array(sig);
+  var offset = h[19] & 0xf;
+  var prev = ((h[offset]&0x7f)<<24|(h[offset+1]&0xff)<<16|(h[offset+2]&0xff)<<8|(h[offset+3]&0xff)) % 1000000;
+  var prevStr = String(prev).padStart(6,'0');
+  
+  if (input === valid || input === prevStr) {
+    localStorage.setItem('bo_setup', '1');
+    bo_setup_done = true;
+    document.getElementById('bo-auth').style.display = 'none';
+    document.getElementById('bo-overlay').classList.add('open');
+    boRenderAll();
+  } else {
+    document.getElementById('auth-err3').textContent = 'Code incorrect. Réessayez.';
+  }
+}
+
+function closeBO() {
+  document.getElementById('bo-overlay').classList.remove('open');
+}
+
+function boTab(name) {
+  document.querySelectorAll('.bo-tab').forEach(function(t){t.classList.remove('active');});
+  document.querySelectorAll('.bo-panel').forEach(function(p){p.classList.remove('active');});
+  document.getElementById('bo-'+name).classList.add('active');
+  event.target.classList.add('active');
+}
+
+/* ALBUMS */
+function boAddAlbum() {
+  var univers = document.getElementById('bo-univers').value;
+  var name = document.getElementById('bo-album-name').value.trim();
+  var url = document.getElementById('bo-album-url').value.trim();
+  var icon = document.getElementById('bo-album-icon').value.trim() || '🎵';
+  if (!name || !url) { alert('Nom et URL requis'); return; }
+  var ex = JSON.parse(localStorage.getItem('fa_ex_'+univers) || '[]');
+  ex.push({name:name, url:url, icon:icon});
+  localStorage.setItem('fa_ex_'+univers, JSON.stringify(ex));
+  document.getElementById('bo-album-name').value = '';
+  document.getElementById('bo-album-url').value = '';
+  document.getElementById('bo-album-icon').value = '';
+  boRenderAlbums();
+  alert('✅ Album ajouté !');
+}
+
+function boDelAlbum(univers, i) {
+  var ex = JSON.parse(localStorage.getItem('fa_ex_'+univers) || '[]');
+  ex.splice(i, 1);
+  localStorage.setItem('fa_ex_'+univers, JSON.stringify(ex));
+  boRenderAlbums();
+}
+
+function boRenderAlbums() {
+  var html = '';
+  ['poemes','broken','tesclar'].forEach(function(u) {
+    var ex = JSON.parse(localStorage.getItem('fa_ex_'+u) || '[]');
+    ex.forEach(function(item, i) {
+      html += '<div class="bo-item"><div class="bo-item-info"><span class="bo-item-name">' + item.icon + ' ' + item.name + '</span><span style="color:#555">(' + u + ')</span></div><button class="bo-item-del" onclick="boDelAlbum(\''+u+'\','+i+')">Supprimer</button></div>';
+    });
+  });
+  document.getElementById('bo-albums-list').innerHTML = html || '<div class="bo-empty">Aucun album ajouté.</div>';
+}
+
+/* EPISODES ANIMAUX */
+function boAddEpisode() {
+  var ep = {
+    fr: document.getElementById('bo-ep-fr-name').value.trim(),
+    en: document.getElementById('bo-ep-en-name').value.trim(),
+    cn: document.getElementById('bo-ep-cn-name').value.trim(),
+    urls: {
+      fr: document.getElementById('bo-ep-fr-url').value.trim() || null,
+      en: document.getElementById('bo-ep-en-url').value.trim() || null,
+      cn: document.getElementById('bo-ep-cn-url').value.trim() || null
+    },
+    note: document.getElementById('bo-ep-note').value.trim()
+  };
+  if (!ep.fr) { alert('Nom FR requis'); return; }
+  var episodes = JSON.parse(localStorage.getItem('fa_episodes_extra') || '[]');
+  episodes.push(ep);
+  localStorage.setItem('fa_episodes_extra', JSON.stringify(episodes));
+  ['fr-name','en-name','cn-name','fr-url','en-url','cn-url','note'].forEach(function(f) {
+    document.getElementById('bo-ep-'+f).value = '';
+  });
+  boRenderEpisodes();
+  alert('✅ Épisode ajouté !');
+}
+
+function boDelEpisode(i) {
+  var episodes = JSON.parse(localStorage.getItem('fa_episodes_extra') || '[]');
+  episodes.splice(i, 1);
+  localStorage.setItem('fa_episodes_extra', JSON.stringify(episodes));
+  boRenderEpisodes();
+}
+
+function boRenderEpisodes() {
+  var episodes = JSON.parse(localStorage.getItem('fa_episodes_extra') || '[]');
+  var html = '';
+  episodes.forEach(function(ep, i) {
+    html += '<div class="bo-item"><div class="bo-item-info"><span class="bo-item-name">🎭 ' + ep.fr + '</span><span style="color:#555">/ ' + (ep.en||'') + ' / ' + (ep.cn||'') + '</span></div><button class="bo-item-del" onclick="boDelEpisode('+i+')">Supprimer</button></div>';
+  });
+  document.getElementById('bo-episodes-list').innerHTML = html || '<div class="bo-empty">Aucun épisode ajouté.</div>';
+}
+
+function boRenderAll() {
+  boRenderAlbums();
+  boRenderEpisodes();
+}
 
 /* ── INIT ── */
 setLang(lang);
