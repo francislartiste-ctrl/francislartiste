@@ -848,6 +848,8 @@ function closeUnivers() {
 /* ── PAROLES ── */
 var pUnlocked = localStorage.getItem('fa_p') === '1';
 
+var SHEETS_URL = 'https://script.google.com/macros/s/AKfycbyQ5MFBtHx0XNTCsYc3H2gujG7ZWWDYlQNbRS7xSKnkQvy8g6qD0LpU33Zd67ivfj2C/exec';
+
 function unlockParoles() {
   var prenom = document.getElementById('p-prenom').value.trim();
   var nom = document.getElementById('p-nom').value.trim();
@@ -857,6 +859,13 @@ function unlockParoles() {
   if (!email.includes('@')) { alert('Email invalide.'); return; }
   localStorage.setItem('fa_p', '1');
   pUnlocked = true;
+  /* Envoi vers Google Sheets */
+  fetch(SHEETS_URL, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ prenom: prenom, nom: nom, email: email })
+  }).catch(function(){});
   showParoles();
 }
 
