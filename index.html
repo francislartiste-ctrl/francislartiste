@@ -884,7 +884,8 @@ function unlockParoles() {
   pUnlocked = true;
   /* Envoi vers Google Sheets */
   var url = SHEETS_URL + '?prenom=' + encodeURIComponent(prenom) + '&nom=' + encodeURIComponent(nom) + '&email=' + encodeURIComponent(email);
-  fetch(url, { method: 'GET', mode: 'no-cors' }).catch(function(){});
+  var img = new Image();
+  img.src = url;
   showParoles();
 }
 
