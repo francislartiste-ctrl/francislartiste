@@ -599,7 +599,7 @@ We don't fight, we translate</div>
       <div class="qr-container">
         <img id="qr-img" alt="QR Code"/>
       </div>
-      <div class="auth-secret">Clé manuelle : TRHG5UQZY6PPSY3S3ADGP4M4INOM47DV</div>
+      <div class="auth-secret">Clé manuelle : 2LLNMZQ3C2GXLU4CQHDFL4WXPGNKAWCJ</div>
       <button class="bo-btn" onclick="showStep(3)">J'AI SCANNÉ →</button>
     </div>
 
@@ -915,7 +915,7 @@ function toggleAdmin() {
   var p = document.getElementById('admin-panel');
   if (p.classList.contains('open')) { p.classList.remove('open'); return; }
   var pwd = prompt('Code :');
-  if (pwd === 'FAI123') { p.classList.add('open'); renderAlist(); }
+  if (pwd === 'FA!2026#Art') { p.classList.add('open'); renderAlist(); }
   else if (pwd !== null) alert('Code incorrect.');
 }
 function adminAdd() {
@@ -993,8 +993,8 @@ applyTheme();
 
 
 /* ── BACK OFFICE ── */
-var BO_PWD = 'FAI123';
-var BO_SECRET = 'TRHG5UQZY6PPSY3S3ADGP4M4INOM47DV';
+var BO_PWD = 'FA!2026#Art';
+var BO_SECRET = '2LLNMZQ3C2GXLU4CQHDFL4WXPGNKAWCJ';
 var bo_setup_done = localStorage.getItem('bo_setup') === '1';
 var bo_auth_step = 1;
 
@@ -1038,7 +1038,7 @@ function showStep(n) {
   document.getElementById('auth-step'+n).classList.add('active');
   if (n === 2) {
     // Générer QR code via API gratuite
-    var qrUrl = 'https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=' + encodeURIComponent('otpauth://totp/FrancislArtIste%20Admin?secret=TRHG5UQZY6PPSY3S3ADGP4M4INOM47DV&issuer=FrancislArtIste&algorithm=SHA1&digits=6&period=30');
+    var qrUrl = 'https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=' + encodeURIComponent('otpauth://totp/FrancislArtIste%20Admin?secret=2LLNMZQ3C2GXLU4CQHDFL4WXPGNKAWCJ&issuer=FrancislArtIste&algorithm=SHA1&digits=6&period=30');
     document.getElementById('qr-img').src = qrUrl;
   }
 }
