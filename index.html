@@ -883,7 +883,8 @@ function unlockParoles() {
   localStorage.setItem('fa_p', '1');
   pUnlocked = true;
   /* Envoi vers Google Sheets */
-  var url = SHEETS_URL + '?prenom=' + encodeURIComponent(prenom) + '&nom=' + encodeURIComponent(nom) + '&email=' + encodeURIComponent(email);
+  var FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSeouMk0_AoIZAZgDMoaDGgSExkA6IQFKeIgpUESthjqCV6FcQ/formResponse';
+  var url = FORM_URL + '?entry.279178888=' + encodeURIComponent(prenom) + '&entry.599662119=' + encodeURIComponent(nom) + '&entry.1607290527=' + encodeURIComponent(email);
   var img = new Image();
   img.src = url;
   showParoles();
