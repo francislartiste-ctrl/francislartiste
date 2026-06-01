@@ -140,7 +140,7 @@ nav{display:flex;align-items:center;gap:.4rem;flex-wrap:wrap}
 .sub-btn{width:100%;padding:.8rem;background:#E02020;border:none;color:#fff;border-radius:50px;font-family:'Montserrat',sans-serif;font-size:.9rem;font-weight:700;letter-spacing:.08em;cursor:pointer;transition:opacity .2s}
 .sub-btn:hover{opacity:.85}
 
-.paroles-list{display:none}
+.paroles-list{display:block}
 .song-item{display:flex;align-items:center;gap:1rem;padding:.75rem 1rem;background:#0d0d0d;border:1px solid #1a1a1a;border-radius:8px;cursor:pointer;margin-bottom:.5rem;transition:all .2s}
 .song-item:hover{border-color:#E02020;background:#111}
 .song-num{font-size:.72rem;color:#555;min-width:1.5rem}
@@ -399,8 +399,6 @@ body.light .symbole-closing p{color:#222}
     <button class="nav-btn" onclick="showPage('contact')">Contact</button>
     <button class="nav-btn" onclick="showPage('apropos')">À propos</button>
     <button class="nav-btn" onclick="showPage('symbole')" data-fr="Le Symbole" data-en="The Symbol" data-cn="符号">Le Symbole</button>
-    <button class="nav-btn soon">Le Chemin des Alchimistes<span class="soon-tag">Bientôt</span></button>
-    <button class="nav-btn soon">Tesclar<span class="soon-tag">Bientôt</span></button>
   </nav>
   <div style="display:flex;align-items:center;gap:.6rem">
     <button id="theme-toggle" onclick="toggleTheme()" title="Mode clair/sombre">🌙</button>
@@ -466,7 +464,6 @@ body.light .symbole-closing p{color:#222}
           <div>
             <div class="ucard-name">Tesclar</div>
             <div class="ucard-desc" data-fr="Jazz, Funk, Électro" data-en="Jazz, Funk, Electro" data-cn="爵士、放克、电子">Jazz, Funk, Électro</div>
-            <div class="ucard-badge" data-fr="Album à venir" data-en="Coming soon" data-cn="即将发布">Album à venir</div>
           </div>
           <div class="ucard-link"><span data-fr="Découvrir" data-en="Discover" data-cn="探索">Découvrir</span> →</div>
         </div>
@@ -492,7 +489,7 @@ body.light .symbole-closing p{color:#222}
 <!-- PAGE PAROLES -->
 <div id="page-paroles" class="page">
   <div class="section">
-    <div id="paroles-gate" class="paroles-gate">
+    <div id="paroles-gate" class="paroles-gate" style="display:none">
       <h2 data-fr="Accéder aux Paroles" data-en="Access Lyrics" data-cn="访问歌词">Accéder aux Paroles</h2>
       <p data-fr="Les paroles sont protégées. Entrez vos coordonnées pour y accéder gratuitement." data-en="Lyrics are protected. Enter your details for free access." data-cn="歌词受保护。输入您的信息免费访问。">Les paroles sont protégées. Entrez vos coordonnées pour y accéder gratuitement.</p>
       <div class="fg"><label data-fr="Prénom" data-en="First name" data-cn="名字">Prénom</label><input type="text" id="p-prenom" placeholder="Votre prénom"/></div>
@@ -505,6 +502,7 @@ body.light .symbole-closing p{color:#222}
       <div class="sec-label">Album</div>
       <div class="sec-title" data-fr="10 Ans — Poèmes en Chanson" data-en="10 Years — Poems in Song" data-cn="十年 — 诗歌之歌">10 Ans — Poèmes en Chanson</div>
       <div id="songs-container"></div>
+      <div class="paroles-copyright" style="margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid #222;color:#666;font-size:.75rem;text-align:center;line-height:1.7;max-width:620px;margin-left:auto;margin-right:auto" data-fr="© FrancislArtIste — Paroles déposées à la SACEM. Tous droits réservés. Toute reproduction ou représentation sans autorisation est interdite." data-en="© FrancislArtIste — Lyrics registered with SACEM. All rights reserved. Any reproduction or performance without authorization is prohibited." data-cn="© FrancislArtIste — 歌词已在SACEM注册。版权所有。未经授权不得复制或表演。">© FrancislArtIste — Paroles déposées à la SACEM. Tous droits réservés. Toute reproduction ou représentation sans autorisation est interdite.</div>
     </div>
   </div>
 </div>
@@ -1025,7 +1023,7 @@ function unlockParoles() {
 }
 
 function showParoles() {
-  if (!pUnlocked) return;
+  /* paroles ouvertes */
   document.getElementById('paroles-gate').style.display = 'none';
   document.getElementById('paroles-list').style.display = 'block';
   var c = document.getElementById('songs-container');
@@ -1309,7 +1307,7 @@ function boRenderAll() {
 
 /* ── INIT ── */
 setLang(lang);
-if (pUnlocked) showParoles();
+showParoles();
 </script>
 </body>
 </html>
