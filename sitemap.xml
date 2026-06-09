@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://francislartiste.com/</loc>
-    <lastmod>2026-06-01</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://francislartiste.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://francislartiste.com/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://francislartiste.com/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://francislartiste.com/"/>
   </url>
 </urlset>
