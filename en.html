@@ -859,6 +859,9 @@ const ALBUMS = {
   ],
   broken: [
     {name:'Back to the Country', img:'album-back-to-the-country.jpg', url:'https://www.youtube.com/playlist?list=OLAK5uy_m6H_ceeXFvhiO0seW3VzyTGBX2xpaDg7I'}
+  ],
+  tesclar: [
+    {name:'Beyond the Disco', img:'https://d2xsxph8kpxj0f.cloudfront.net/310519663132427343/9jHKgV2yMR3vRr8iJ76eht/hero_tesclar-R2UMaxwXWEUb8p2mbZRbck.webp', url:'https://www.youtube.com/playlist?list=OLAK5uy_mdYJ6cZ-a5i6Wk4r8AlCvqdz5ROMyeHUg'}
   ]
 };
 
@@ -976,11 +979,6 @@ function openUnivers(key) {
   document.getElementById('detail-title').textContent = titles[key][lang] || titles[key].fr;
 
   var c = document.getElementById('detail-content');
-
-  if (key === 'tesclar') {
-    c.innerHTML = '<div class="cs-page"><div class="cs-icon">⚡</div><div class="cs-title">Tesclar</div><div class="cs-video"><iframe src="https://www.youtube.com/embed/h_gaBCsYdXo?rel=0" allow="encrypted-media;fullscreen" allowfullscreen></iframe></div><a href="https://www.youtube.com/playlist?list=OLAK5uy_ni_encs1fRZ9Cxzab7JnHRjhs183o21i0" target="_blank" rel="noopener" class="ext-link" style="margin-top:1rem">▶ Playlist YouTube</a></div>';
-    return;
-  }
 
   if (key === 'animaux') {
     var html = '<div class="egrid">';
