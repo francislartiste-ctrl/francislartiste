@@ -3,11 +3,14 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>FrancislArtIste — Univers Musicaux</title>
+<meta name="theme-color" content="#000000"/>
+<link rel="icon" href="logo.png"/>
+<link rel="apple-touch-icon" href="logo.png"/>
+<title>FrancislArtIste — Créateur d'univers</title>
 <!-- SEO -->
 <meta name="google-site-verification" content="l3w2Hl4UOIGqKBHGMWKNAxOmWn9_n6GpEpPFcf7C2js"/>
-<meta name="description" content="FrancislArtIste — Francis l'artiste : une démarche où les mots viennent du vécu et où l'IA devient un instrument. Poésie, chanson et émotion authentique."/>
-<meta name="keywords" content="FrancislArtIste, Francis artiste, Poèmes en Chanson, Animaux, Broken Strings, Tesclar, musique, poésie, chanson, rock, jazz, comédie musicale, paroles"/>
+<meta name="description" content="FrancislArtIste — créateur d'univers. Six collections, une signature : chanson, comédie musicale, rock, jazz-funk, chansons pour enfants et littérature. Une œuvre née du vécu et de l'émotion."/>
+<meta name="keywords" content="FrancislArtIste, Francis artiste, créateur d'univers, Poèmes en Chanson, Animaux, Broken Strings, Tesclar, Kids, Le Chemin des Alchimistes, musique, poésie, chanson, rock, jazz, comédie musicale, roman, paroles"/>
 <meta name="author" content="FrancislArtIste"/>
 <meta name="robots" content="index, follow"/>
 <link rel="canonical" href="https://francislartiste.com/"/>
@@ -17,16 +20,16 @@
 <link rel="alternate" hreflang="x-default" href="https://francislartiste.com/"/>
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://francislartiste.com/"/>
-<meta property="og:title" content="FrancislArtIste — Univers Musicaux"/>
-<meta property="og:description" content="Poèmes en Chanson, Animaux, Broken Strings et Tesclar — une âme artistique, quatre univers."/>
-<meta property="og:image" content="https://francislartiste.com/logo.png"/>
-<meta property="og:image:alt" content="Logo FrancislArtIste — un cercle ouvert yin-yang aux quatre éléments"/>
+<meta property="og:title" content="FrancislArtIste — Créateur d'univers"/>
+<meta property="og:description" content="Six collections, une signature : chanson, comédie musicale, rock, jazz-funk, chansons pour enfants et littérature."/>
+<meta property="og:image" content="https://francislartiste.com/og-image.jpg"/>
+<meta property="og:image:alt" content="FrancislArtIste — créateur d'univers, signature au cercle rouge ouvert"/>
 <meta property="og:locale" content="fr_FR"/>
 <meta property="og:site_name" content="FrancislArtIste"/>
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="FrancislArtIste — Univers Musicaux"/>
-<meta name="twitter:description" content="Poèmes en Chanson, Animaux, Broken Strings et Tesclar — une âme artistique, quatre univers."/>
-<meta name="twitter:image" content="https://francislartiste.com/logo.png"/>
+<meta name="twitter:title" content="FrancislArtIste — Créateur d'univers"/>
+<meta name="twitter:description" content="Six collections, une signature : chanson, comédie musicale, rock, jazz-funk, chansons pour enfants et littérature."/>
+<meta name="twitter:image" content="https://francislartiste.com/og-image.jpg"/>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -35,8 +38,8 @@
       "@type": "WebSite",
       "@id": "https://francislartiste.com/#website",
       "url": "https://francislartiste.com/",
-      "name": "FrancislArtIste — Univers Musicaux",
-      "description": "Site officiel de FrancislArtIste : poésie, chanson, théâtre musical, rock et dance. Quatre univers, une âme artistique.",
+      "name": "FrancislArtIste — Créateur d'univers",
+      "description": "Site officiel de FrancislArtIste, créateur d'univers : six collections, une signature — chanson, comédie musicale, rock, jazz-funk, chansons pour enfants et littérature.",
       "inLanguage": ["fr", "en", "zh"],
       "publisher": { "@id": "https://francislartiste.com/#person" }
     },
@@ -182,32 +185,44 @@ nav{display:flex;align-items:center;gap:.4rem;flex-wrap:wrap}
 .page{display:none}
 .page.active{display:block}
 
+/* HERO BANNER */
+.hero-banner{position:relative;max-width:1400px;margin:0 auto;padding:1.2rem 1rem 0}
+.hero-banner .hero-bg{width:100%;display:block;border-radius:14px}
+.hero-banner .hero-logo{position:absolute;top:calc(50% + .6rem);left:50%;transform:translate(-50%,-50%);width:clamp(74px,11vw,150px);height:auto;filter:drop-shadow(0 6px 18px rgba(0,0,0,.6))}
+body:not(.light) .hero-banner .hero-logo{mix-blend-mode:screen}
+
 /* HERO */
-.hero{text-align:center;padding:5rem 2rem 3rem;border-bottom:1px solid #111}
+.hero{text-align:center;padding:2.5rem 2rem 3rem;border-bottom:1px solid #111}
 .hero-tag{display:inline-block;font-size:.7rem;letter-spacing:.25em;text-transform:uppercase;color:#E02020;border:1px solid rgba(224,32,32,.3);padding:.3rem 1rem;border-radius:50px;margin-bottom:1.5rem}
 .hero h1{font-family:'Montserrat',sans-serif;font-size:clamp(2rem,6vw,4rem);font-weight:900;line-height:1.1;margin-bottom:1rem}
 .hero h1 em{font-style:normal;color:#E02020}
-.hero p{color:#666;font-size:1rem;max-width:550px;margin:0 auto}
+.hero p{color:#888;font-size:1.05rem;max-width:560px;margin:0 auto 1.8rem}
+.hero-cta{display:inline-flex;align-items:center;gap:.5rem;background:#E02020;color:#fff;border:none;padding:.8rem 2rem;border-radius:50px;font-family:'Montserrat',sans-serif;font-size:.9rem;font-weight:700;letter-spacing:.05em;cursor:pointer;transition:opacity .2s,transform .2s}
+.hero-cta:hover{opacity:.9;transform:translateY(-2px)}
+.ucard-sign{font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-top:.35rem}
 
 /* SECTION */
 .section{max-width:1200px;margin:0 auto;padding:3rem 2rem}
 .sec-label{font-size:.65rem;letter-spacing:.25em;text-transform:uppercase;color:#E02020;margin-bottom:.6rem}
 .sec-title{font-family:'Montserrat',sans-serif;font-size:1.6rem;font-weight:700;margin-bottom:2rem}
 
-/* UNIVERSE CARDS */
-.ugrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin-bottom:3rem}
-.ucard{position:relative;overflow:hidden;border-radius:16px;height:280px;cursor:pointer;border:1px solid #1a1a1a;transition:border-color .3s,transform .3s}
-.ucard:hover{border-color:#E02020;transform:translateY(-4px)}
-.ucard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.25;transition:opacity .3s}
-.ucard:hover img{opacity:.4}
-.ucard-grad{position:absolute;inset:0;background:linear-gradient(135deg,rgba(180,0,0,.7),rgba(60,0,0,.5))}
-.ucard-body{position:relative;padding:1.8rem;height:100%;display:flex;flex-direction:column;justify-content:space-between}
-.ucard-num{font-size:.65rem;letter-spacing:.25em;color:rgba(255,255,255,.3);text-transform:uppercase}
-.ucard-name{font-family:'Montserrat',sans-serif;font-size:1.6rem;font-weight:900;line-height:1.1;margin-bottom:.4rem}
-.ucard-desc{font-size:.82rem;color:rgba(255,255,255,.7);line-height:1.5}
-.ucard-link{font-size:.75rem;color:rgba(255,255,255,.4);display:flex;align-items:center;gap:.4rem;transition:color .2s}
-.ucard:hover .ucard-link{color:#fff}
-.ucard-badge{display:inline-block;font-size:.65rem;padding:.2rem .7rem;border-radius:50px;background:rgba(224,32,32,.15);border:1px solid rgba(224,32,32,.3);color:#E02020;margin-top:.5rem}
+/* COLLECTIONS — PLANÈTES */
+.ugrid{display:grid;grid-template-columns:repeat(6,1fr);gap:1.4rem;margin:0 auto 3rem;max-width:1300px}
+.ucard{background:none;border:none;cursor:pointer;text-align:center;display:flex;flex-direction:column;align-items:center;gap:.6rem}
+.planet{position:relative;width:100%;aspect-ratio:1;border-radius:50%;overflow:hidden;border:2px solid #222;transition:border-color .3s,transform .3s,box-shadow .3s}
+.planet img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+.planet::after{content:'';position:absolute;inset:0;border-radius:50%;box-shadow:inset -12px -16px 34px rgba(0,0,0,.75),inset 10px 10px 22px rgba(255,255,255,.05);pointer-events:none}
+.planet-num{position:absolute;top:.55rem;left:50%;transform:translateX(-50%);font-size:.58rem;letter-spacing:.25em;color:rgba(255,255,255,.55);text-transform:uppercase;z-index:2}
+.ucard:hover .planet{border-color:#E02020;transform:translateY(-6px);box-shadow:0 14px 34px rgba(224,32,32,.28)}
+.ucard:hover .planet img{transform:scale(1.06)}
+.ucard-name{font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:700;line-height:1.15;color:#eee;transition:color .2s}
+.ucard:hover .ucard-name{color:#E02020}
+.ucard-desc{font-size:.74rem;color:#888;line-height:1.4}
+@media(max-width:1000px){.ugrid{grid-template-columns:repeat(3,1fr);max-width:680px}}
+@media(max-width:600px){.ugrid{grid-template-columns:repeat(2,1fr);gap:1.1rem}}
+body.light .planet{border-color:#ddd}
+body.light .ucard-name{color:#111}
+body.light .ucard:hover .ucard-name{color:#E02020}
 
 /* DETAIL */
 .detail{display:none;margin-top:2rem}
@@ -255,17 +270,11 @@ nav{display:flex;align-items:center;gap:.4rem;flex-wrap:wrap}
 .pembed{position:relative;width:100%;padding-top:56.25%;border-radius:12px;overflow:hidden;border:1px solid #1a1a1a;margin-bottom:1rem}
 .pembed iframe{position:absolute;inset:0;width:100%;height:100%;border:none}
 
-/* PAROLES */
-.paroles-gate{max-width:480px;margin:0 auto;text-align:center;padding:3rem 1rem}
-.paroles-gate h2{font-family:'Montserrat',sans-serif;font-size:1.5rem;font-weight:700;margin-bottom:.8rem}
-.paroles-gate p{color:#666;margin-bottom:2rem;font-size:.9rem;line-height:1.7}
+/* CONTACT FORM */
 .fg{margin-bottom:.8rem;text-align:left}
 .fg label{display:block;font-size:.72rem;color:#666;margin-bottom:.3rem;text-transform:uppercase;letter-spacing:.08em}
 .fg input{width:100%;background:#0d0d0d;border:1px solid #222;color:#eee;padding:.65rem 1rem;border-radius:8px;font-family:'Lato',sans-serif;font-size:.9rem}
 .fg input:focus{outline:none;border-color:#E02020}
-.rgpd{display:flex;align-items:flex-start;gap:.7rem;text-align:left;margin-bottom:1.2rem}
-.rgpd input{margin-top:.2rem;flex-shrink:0;accent-color:#E02020}
-.rgpd label{font-size:.75rem;color:#555;line-height:1.6}
 .sub-btn{width:100%;padding:.8rem;background:#E02020;border:none;color:#fff;border-radius:50px;font-family:'Montserrat',sans-serif;font-size:.9rem;font-weight:700;letter-spacing:.08em;cursor:pointer;transition:opacity .2s}
 .sub-btn:hover{opacity:.85}
 
@@ -290,6 +299,8 @@ nav{display:flex;align-items:center;gap:.4rem;flex-wrap:wrap}
 
 /* PODCAST */
 .podcast-hero{text-align:center;padding:3rem 2rem 2rem;border-bottom:1px solid #111;margin-bottom:2rem}
+.radio-emblem{width:132px;height:132px;border-radius:50%;object-fit:cover;display:block;margin:0 auto 1.2rem;box-shadow:0 0 34px rgba(224,32,32,.35)}
+.nav-radio-ico{width:1.05rem;height:1.05rem;border-radius:50%;object-fit:cover;vertical-align:-.2rem;margin-right:.35rem}
 .podcast-hero h2{font-family:'Montserrat',sans-serif;font-size:1.8rem;font-weight:700;margin-bottom:.7rem}
 .podcast-hero p{color:#666;font-size:.9rem;max-width:500px;margin:0 auto}
 
@@ -324,23 +335,11 @@ nav{display:flex;align-items:center;gap:.4rem;flex-wrap:wrap}
 footer{background:#0a0a0a;border-top:1px solid #111;margin-top:4rem}
 .footer-grid{max-width:1200px;margin:0 auto;padding:2.5rem 2rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:2rem}
 .fc h4{font-family:'Montserrat',sans-serif;font-size:.82rem;font-weight:700;color:#E02020;margin-bottom:.8rem;letter-spacing:.05em}
-.fc p,.fc a,.fc li{font-size:.78rem;color:#444;line-height:1.9;text-decoration:none;list-style:none;cursor:pointer;transition:color .2s}
-.fc a:hover,.fc li:hover{color:#aaa}
-.footer-bottom{text-align:center;padding:1rem 2rem;font-size:.7rem;color:#333;border-top:1px solid #111}
+.fc p,.fc a,.fc li{font-size:.78rem;color:#8a8a8a;line-height:1.9;text-decoration:none;list-style:none;cursor:pointer;transition:color .2s}
+.fc a:hover,.fc li:hover{color:#fff}
+.footer-bottom{text-align:center;padding:1rem 2rem;font-size:.7rem;color:#777;border-top:1px solid #111}
 
 
-
-/* INTRO */
-#intro{position:fixed;inset:0;z-index:1000;background:#000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.5rem;transition:opacity .6s ease}
-#intro.hidden{opacity:0;pointer-events:none;visibility:hidden}
-#intro iframe{position:absolute;inset:0;width:100%;height:100%;border:none;pointer-events:none}
-#intro-content{position:relative;z-index:2;text-align:center;display:flex;flex-direction:column;align-items:center;gap:1.2rem}
-#intro-title{font-family:'Montserrat',sans-serif;font-size:clamp(1.8rem,5vw,3rem);font-weight:900;background:linear-gradient(135deg,#fff,#E02020);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-#intro-sub{font-size:.75rem;color:#666;letter-spacing:.3em;text-transform:uppercase}
-#intro-enter{background:#E02020;border:none;color:#fff;padding:.9rem 3rem;border-radius:50px;font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:700;letter-spacing:.1em;cursor:pointer;text-transform:uppercase;transition:opacity .4s;opacity:0;pointer-events:none}
-#intro-enter:hover{opacity:.85}
-#intro-skip{background:none;border:none;color:#444;font-size:.72rem;cursor:pointer;font-family:'Lato',sans-serif;letter-spacing:.1em;text-decoration:underline;opacity:0;transition:opacity .4s;pointer-events:none}
-#intro-skip:hover{color:#888}
 
 /* MODE CLAIR */
 body.light{background:#f5f5f5;color:#111}
@@ -365,7 +364,6 @@ body.light .linner{background:#fff;border-color:#ddd}
 body.light .ltext{color:#333}
 body.light .lauthor{color:#999}
 body.light .lcopyright{color:#888;border-top-color:#e0e0e0}
-body.light .paroles-gate p{color:#555}
 body.light .fg input{background:#fff;border-color:#ddd;color:#111}
 body.light .ex-card{background:#fff;border-color:#ddd}
 body.light .ex-lyrics{background:#f5f5f5;color:#555}
@@ -376,11 +374,8 @@ body.light .fb-section{border-top-color:#e0e0e0}
 body.light .fb-section p{color:#888}
 body.light .fb-btn{border-color:#ddd;color:#555}
 body.light footer{background:#fff;border-top-color:#e0e0e0}
-body.light .fc p,.light .fc a,.light .fc li{color:#888}
-body.light .footer-bottom{color:#aaa;border-top-color:#e0e0e0}
-body.light #admin-toggle{background:rgba(200,0,0,.08);border-color:rgba(200,0,0,.2)}
-body.light #admin-panel{background:#fff;border-color:#ddd}
-body.light .aform select,.light .aform input{background:#f5f5f5;border-color:#ddd;color:#111}
+body.light .fc p,body.light .fc a,body.light .fc li{color:#777}
+body.light .footer-bottom{color:#888;border-top-color:#e0e0e0}
 body.light .detail-header{border-bottom-color:#e0e0e0}
 body.light .cs-video{border-color:#ddd}
 body.light .cs-desc{color:#666}
@@ -426,77 +421,15 @@ body.light .symbole-closing p{color:#222}
 @media(max-width:640px){.symbole-title{font-size:1.8rem}.symbole-logo img{width:110px;height:110px}}
 
 
-/* BACK OFFICE */
-#bo-overlay{display:none;position:fixed;inset:0;z-index:500;background:rgba(0,0,0,.95);backdrop-filter:blur(8px);overflow-y:auto}
-#bo-overlay.open{display:block}
-.bo-container{max-width:900px;margin:0 auto;padding:2rem}
-.bo-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:2rem;padding-bottom:1rem;border-bottom:1px solid #222}
-.bo-header h2{font-family:'Montserrat',sans-serif;font-size:1.4rem;font-weight:700;color:#E02020}
-.bo-close{background:none;border:1px solid #333;color:#777;padding:.4rem 1rem;border-radius:50px;cursor:pointer;font-family:'Lato',sans-serif;font-size:.82rem;transition:all .2s}
-.bo-close:hover{border-color:#fff;color:#fff}
-.bo-tabs{display:flex;gap:.5rem;margin-bottom:2rem;flex-wrap:wrap}
-.bo-tab{background:none;border:1px solid #333;color:#777;padding:.4rem 1rem;border-radius:50px;cursor:pointer;font-family:'Lato',sans-serif;font-size:.82rem;transition:all .2s}
-.bo-tab:hover{border-color:#E02020;color:#E02020}
-.bo-tab.active{background:rgba(224,32,32,.15);border-color:#E02020;color:#E02020}
-.bo-panel{display:none}
-.bo-panel.active{display:block}
-.bo-section{background:#0d0d0d;border:1px solid #1a1a1a;border-radius:12px;padding:1.5rem;margin-bottom:1.5rem}
-.bo-section h3{font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:700;color:#fff;margin-bottom:1rem}
-.bo-form{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-bottom:1rem}
-@media(max-width:600px){.bo-form{grid-template-columns:1fr}}
-.bo-field{display:flex;flex-direction:column;gap:.3rem}
-.bo-field label{font-size:.72rem;color:#666;text-transform:uppercase;letter-spacing:.08em}
-.bo-field input,.bo-field select,.bo-field textarea{background:#111;border:1px solid #222;color:#eee;padding:.6rem .9rem;border-radius:8px;font-family:'Lato',sans-serif;font-size:.85rem;width:100%}
-.bo-field input:focus,.bo-field select:focus,.bo-field textarea:focus{outline:none;border-color:#E02020}
-.bo-field.full{grid-column:1/-1}
-.bo-btn{background:#E02020;border:none;color:#fff;padding:.6rem 1.5rem;border-radius:50px;cursor:pointer;font-family:'Montserrat',sans-serif;font-size:.82rem;font-weight:700;transition:opacity .2s}
-.bo-btn:hover{opacity:.85}
-.bo-btn.secondary{background:transparent;border:1px solid #333;color:#777}
-.bo-btn.secondary:hover{border-color:#fff;color:#fff;opacity:1}
-.bo-list{display:flex;flex-direction:column;gap:.5rem;margin-top:1rem}
-.bo-item{display:flex;align-items:center;justify-content:space-between;padding:.7rem 1rem;background:#111;border:1px solid #1a1a1a;border-radius:8px}
-.bo-item-info{font-size:.82rem;color:#aaa;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.bo-item-name{font-weight:700;color:#fff;margin-right:.5rem}
-.bo-item-del{background:none;border:1px solid #c44;color:#c44;padding:.3rem .7rem;border-radius:50px;cursor:pointer;font-size:.72rem;transition:all .2s;flex-shrink:0}
-.bo-item-del:hover{background:rgba(200,68,68,.15)}
-.bo-empty{font-size:.8rem;color:#444;font-style:italic;padding:.5rem 0}
-
-/* AUTH */
-#bo-auth{display:none;position:fixed;inset:0;z-index:600;background:rgba(0,0,0,.97);align-items:center;justify-content:center}
-#bo-auth.hidden{display:none}
-.auth-box{background:#0d0d0d;border:1px solid #E02020;border-radius:16px;padding:2rem;width:100%;max-width:380px;text-align:center}
-.auth-box h3{font-family:'Montserrat',sans-serif;font-size:1.2rem;font-weight:700;color:#E02020;margin-bottom:.5rem}
-.auth-box p{font-size:.82rem;color:#666;margin-bottom:1.5rem}
-.auth-step{display:none}
-.auth-step.active{display:block}
-.auth-input{width:100%;background:#111;border:1px solid #333;color:#eee;padding:.8rem 1rem;border-radius:8px;font-family:'Lato',sans-serif;font-size:1rem;text-align:center;margin-bottom:1rem;letter-spacing:.1em}
-.auth-input:focus{outline:none;border-color:#E02020}
-.auth-err{font-size:.78rem;color:#c44;margin-bottom:.8rem;min-height:1.2rem}
-.qr-container{background:#fff;padding:1rem;border-radius:8px;display:inline-block;margin-bottom:1rem}
-.qr-container img{width:180px;height:180px;display:block}
-.auth-secret{font-size:.72rem;color:#666;word-break:break-all;margin-bottom:1rem;font-family:monospace;background:#111;padding:.5rem;border-radius:6px}
-
-/* ADMIN */
-#admin-toggle{position:fixed;bottom:1.5rem;right:1.5rem;z-index:50;width:2.4rem;height:2.4rem;background:rgba(224,32,32,.1);border:1px solid rgba(224,32,32,.2);border-radius:50%;cursor:pointer;font-size:.85rem;transition:all .2s;display:flex;align-items:center;justify-content:center}
-#admin-toggle:hover{background:rgba(224,32,32,.2)}
-#admin-panel{display:none;position:fixed;bottom:5rem;right:1.5rem;z-index:50;background:#0d0d0d;border:1px solid rgba(224,32,32,.2);border-radius:12px;padding:1.2rem;width:280px;box-shadow:0 16px 40px rgba(0,0,0,.7)}
-#admin-panel.open{display:block}
-#admin-panel h4{font-family:'Montserrat',sans-serif;color:#E02020;margin-bottom:.8rem;font-size:.85rem}
-.aform{display:flex;flex-direction:column;gap:.5rem;margin-bottom:.8rem}
-.aform select,.aform input{background:#111;border:1px solid #222;color:#eee;padding:.45rem .7rem;border-radius:6px;font-size:.8rem;font-family:'Lato',sans-serif;width:100%}
-.aform-btn{background:rgba(224,32,32,.15);border:1px solid #E02020;color:#E02020;padding:.45rem;border-radius:6px;cursor:pointer;font-family:'Lato',sans-serif;font-size:.8rem;transition:all .2s}
-.aform-btn:hover{background:rgba(224,32,32,.3)}
-.alist{max-height:120px;overflow-y:auto}
-.aitem{display:flex;justify-content:space-between;align-items:center;padding:.3rem .5rem;background:#111;margin-bottom:.3rem;border-radius:4px;font-size:.72rem}
-.aitem span{color:#666;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:190px}
-.adel{background:none;border:none;color:#c44;cursor:pointer}
-
 @media(max-width:600px){
   header{padding:.8rem 1rem}
   nav{gap:.2rem}
   .nav-btn{font-size:.72rem;padding:.3rem .7rem}
-  .ugrid{grid-template-columns:1fr}
-  .ucard{height:220px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+  .ucard:hover,.acard:hover{transform:none}
 }
 </style>
 <script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","waktlq1u1x");</script>
@@ -558,40 +491,29 @@ body.light .symbole-closing p{color:#222}
   </p>
 </noscript>
 
-<div id="intro">
-  <iframe src="https://www.youtube.com/embed/JhpgJSa47tU?autoplay=1&mute=1&controls=0&loop=1&playlist=JhpgJSa47tU&rel=0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-  <div id="intro-content">
-    <div>
-      <div id="intro-title">FrancislArtIste</div>
-      <div id="intro-sub" data-fr="Univers Musicaux" data-en="Musical Worlds" data-cn="音乐宇宙">Univers Musicaux</div>
-    </div>
-    <button id="intro-enter" onclick="enterSite()" data-fr="ENTRER" data-en="ENTER" data-cn="进入">ENTRER</button>
-    <button id="intro-skip" onclick="enterSite()" data-fr="Passer" data-en="Skip" data-cn="跳过">Passer</button>
-  </div>
-</div>
-
 <header>
-  <a class="logo" href="#" onclick="replayIntro();return false">
+  <a class="logo" href="#" onclick="showPage('univers');return false">
     <img id="logo-img" src="logo.png" alt="FrancislArtIste"/>
     <div>
       <div class="logo-text">FrancislArtIste</div>
-      <div class="logo-sub" data-fr="Univers Musicaux" data-en="Musical Worlds" data-cn="音乐宇宙">Univers Musicaux</div>
+      <div class="logo-sub" data-fr="Créateur d'univers" data-en="Universe Creator" data-cn="宇宙创造者">Créateur d'univers</div>
     </div>
   </a>
   <nav>
-    <button class="nav-btn active" onclick="showPage('univers')" data-fr="Univers" data-en="Worlds" data-cn="宇宙">Univers</button>
+    <button class="nav-btn active" onclick="showPage('univers')" data-fr="Collections" data-en="Collections" data-cn="作品集">Collections</button>
     <button class="nav-btn" onclick="showPage('paroles')" data-fr="Paroles" data-en="Lyrics" data-cn="歌词">Paroles</button>
     <button class="nav-btn" onclick="showPage('podcast')">À bon entendeur</button>
+    <button class="nav-btn" onclick="showPage('radio')" data-fr="<img class='nav-radio-ico' src='radio-logo.png' alt=''/>Radio" data-en="<img class='nav-radio-ico' src='radio-logo.png' alt=''/>Radio" data-cn="<img class='nav-radio-ico' src='radio-logo.png' alt=''/>电台"><img class="nav-radio-ico" src="radio-logo.png" alt=""/>Radio</button>
     <button class="nav-btn" onclick="showPage('contact')" data-fr="Contact" data-en="Contact" data-cn="联系">Contact</button>
     <button class="nav-btn" onclick="showPage('apropos')" data-fr="À propos" data-en="About" data-cn="关于">À propos</button>
     <button class="nav-btn" onclick="showPage('symbole')" data-fr="Le Symbole" data-en="The Symbol" data-cn="符号">Le Symbole</button>
   </nav>
   <div style="display:flex;align-items:center;gap:.6rem">
-    <button id="theme-toggle" onclick="toggleTheme()" title="Mode clair/sombre">🌙</button>
+    <button id="theme-toggle" onclick="toggleTheme()" title="Mode clair/sombre" aria-label="Basculer mode clair/sombre">🌙</button>
     <div class="lang-btns">
-      <button class="lang-btn active" onclick="setLang('fr')">FR</button>
-      <button class="lang-btn" onclick="setLang('en')">EN</button>
-      <button class="lang-btn" onclick="setLang('cn')">中</button>
+      <button class="lang-btn active" onclick="setLang('fr')" aria-label="Français" lang="fr">FR</button>
+      <button class="lang-btn" onclick="setLang('en')" aria-label="English" lang="en">EN</button>
+      <button class="lang-btn" onclick="setLang('cn')" aria-label="中文" lang="zh">中</button>
     </div>
     <a href="https://www.youtube.com/@francislartiste" target="_blank" rel="noopener" class="yt-btn">▶ YouTube</a>
   </div>
@@ -599,66 +521,59 @@ body.light .symbole-closing p{color:#222}
 
 <!-- PAGE UNIVERS -->
 <div id="page-univers" class="page active">
+  <div class="hero-banner">
+    <img class="hero-bg" src="hero-banner.jpg" alt="FrancislArtIste — six collections de création"/>
+    <img class="hero-logo" src="logo.png" alt="FrancislArtIste"/>
+  </div>
   <div class="hero">
-    <div class="hero-tag" data-fr="Poèmes en Chanson · Animaux · Broken Strings · Tesclar" data-en="Poems in Song · Animals · Broken Strings · Tesclar" data-cn="诗歌之歌 · 灵兽 · Broken Strings · Tesclar">Poèmes en Chanson · Animaux · Broken Strings · Tesclar</div>
-    <h1 data-fr="Quatre <em>Univers Musicaux</em>" data-en="Four <em>Musical Worlds</em>" data-cn="四个<em>音乐宇宙</em>">Quatre <em>Univers Musicaux</em></h1>
-    <p data-fr="Une âme artistique, quatre mondes." data-en="One soul, four worlds." data-cn="一个灵魂，四个世界。">Une âme artistique, quatre mondes.</p>
+    <div class="hero-tag" data-fr="Créateur d'univers" data-en="Universe Creator" data-cn="宇宙创造者">Créateur d'univers</div>
+    <h1 data-fr="<em>FrancislArtIste</em>" data-en="<em>FrancislArtIste</em>" data-cn="<em>FrancislArtIste</em>"><em>FrancislArtIste</em></h1>
+    <p data-fr="Six collections, une signature. De la chanson à la littérature, une même âme : l'émotion née du vécu." data-en="Six collections, one signature. From song to literature, one soul: emotion born from lived experience." data-cn="六个作品集，一个签名。从歌曲到文学，同一个灵魂：源于生活的情感。">Six collections, une signature. De la chanson à la littérature, une même âme : l'émotion née du vécu.</p>
+    <button class="hero-cta" onclick="document.getElementById('ugrid').scrollIntoView({behavior:'smooth'})" data-fr="Découvrir les collections ↓" data-en="Discover the collections ↓" data-cn="探索作品集 ↓">Découvrir les collections ↓</button>
   </div>
   <div class="section">
     <div id="ugrid" class="ugrid">
       <div class="ucard" onclick="openUnivers('poemes')">
-        <img src="univers-poemes-en-chanson.jpg" alt="Thérapie — Poèmes en Chanson"/>
-        <div class="ucard-grad"></div>
-        <div class="ucard-body">
-          <div class="ucard-num">01</div>
-          <div>
-            <div class="ucard-name" data-fr="Poèmes en Chanson" data-en="Poems in Song" data-cn="诗歌之歌">Poèmes en Chanson</div>
-            <div class="ucard-desc" data-fr="Trois albums — une âme poétique" data-en="Three albums — a poetic soul" data-cn="三张专辑 — 诗意灵魂">Trois albums — une âme poétique</div>
-          </div>
-          <div class="ucard-link"><span data-fr="Découvrir" data-en="Discover" data-cn="探索">Découvrir</span> →</div>
-        </div>
+        <div class="planet"><img src="univers-poemes-en-chanson.jpg" alt="Poèmes en Chanson"/><span class="planet-num">01</span></div>
+        <div class="ucard-name" data-fr="Poèmes en Chanson" data-en="Poems in Song" data-cn="诗歌之歌">Poèmes en Chanson</div>
+        <div class="ucard-desc" data-fr="Poésie & chanson" data-en="Poetry & song" data-cn="诗歌与歌曲">Poésie & chanson</div>
+        <div class="ucard-sign">by FrancislArtIste</div>
       </div>
       <div class="ucard" onclick="openUnivers('animaux')">
-        <img src="univers-animaux.jpg" alt="Cœur de Lion — Animaux"/>
-        <div class="ucard-grad"></div>
-        <div class="ucard-body">
-          <div class="ucard-num">02</div>
-          <div>
-            <div class="ucard-name" data-fr="Animaux" data-en="Animals" data-cn="灵兽">Animaux</div>
-            <div class="ucard-desc" data-fr="La comédie musicale trilingue" data-en="The trilingual musical" data-cn="三语音乐剧">La comédie musicale trilingue</div>
-          </div>
-          <div class="ucard-link"><span data-fr="Découvrir" data-en="Discover" data-cn="探索">Découvrir</span> →</div>
-        </div>
+        <div class="planet"><img src="univers-animaux.jpg" alt="Animaux"/><span class="planet-num">02</span></div>
+        <div class="ucard-name" data-fr="Animaux" data-en="Animals" data-cn="灵兽">Animaux</div>
+        <div class="ucard-desc" data-fr="Comédie musicale" data-en="Musical" data-cn="音乐剧">Comédie musicale</div>
+        <div class="ucard-sign">by FrancislArtIste</div>
       </div>
       <div class="ucard" onclick="openUnivers('broken')">
-        <img src="univers-broken-strings.jpg" alt="Back to the Country — Broken Strings"/>
-        <div class="ucard-grad"></div>
-        <div class="ucard-body">
-          <div class="ucard-num">03</div>
-          <div>
-            <div class="ucard-name">Broken Strings</div>
-            <div class="ucard-desc" data-fr="Rock, Country, Blues" data-en="Rock, Country, Blues" data-cn="摇滚、乡村与蓝调">Rock, Country, Blues</div>
-          </div>
-          <div class="ucard-link"><span data-fr="Découvrir" data-en="Discover" data-cn="探索">Découvrir</span> →</div>
-        </div>
+        <div class="planet"><img src="univers-broken-strings.jpg" alt="Broken Strings"/><span class="planet-num">03</span></div>
+        <div class="ucard-name">Broken Strings</div>
+        <div class="ucard-desc" data-fr="Rock · Country · Blues" data-en="Rock · Country · Blues" data-cn="摇滚 · 乡村 · 蓝调">Rock · Country · Blues</div>
+        <div class="ucard-sign">by FrancislArtIste</div>
       </div>
       <div class="ucard" onclick="openUnivers('tesclar')">
-        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663132427343/9jHKgV2yMR3vRr8iJ76eht/hero_tesclar-R2UMaxwXWEUb8p2mbZRbck.webp" alt="Tesclar"/>
-        <div class="ucard-grad"></div>
-        <div class="ucard-body">
-          <div class="ucard-num">04</div>
-          <div>
-            <div class="ucard-name">Tesclar</div>
-            <div class="ucard-desc" data-fr="Jazz, Funk, Électro" data-en="Jazz, Funk, Electro" data-cn="爵士、放克、电子">Jazz, Funk, Électro</div>
-          </div>
-          <div class="ucard-link"><span data-fr="Découvrir" data-en="Discover" data-cn="探索">Découvrir</span> →</div>
-        </div>
+        <div class="planet"><img src="univers-tesclar.jpg" alt="Tesclar"/><span class="planet-num">04</span></div>
+        <div class="ucard-name">Tesclar</div>
+        <div class="ucard-desc" data-fr="Jazz · Funk · Électro" data-en="Jazz · Funk · Electro" data-cn="爵士 · 放克 · 电子">Jazz · Funk · Électro</div>
+        <div class="ucard-sign">by FrancislArtIste</div>
+      </div>
+      <div class="ucard" onclick="openUnivers('kids')">
+        <div class="planet"><img src="univers-kids.jpg" alt="Kids"/><span class="planet-num">05</span></div>
+        <div class="ucard-name">Kids</div>
+        <div class="ucard-desc" data-fr="Chansons pour enfants" data-en="Songs for children" data-cn="儿童歌曲">Chansons pour enfants</div>
+        <div class="ucard-sign">by FrancislArtIste</div>
+      </div>
+      <div class="ucard" onclick="openUnivers('alchimistes')">
+        <div class="planet"><img src="univers-alchimistes.jpg" alt="Le Chemin des Alchimistes"/><span class="planet-num">06</span></div>
+        <div class="ucard-name" data-fr="Le Chemin des Alchimistes" data-en="The Path of the Alchemists" data-cn="炼金术士之路">Le Chemin des Alchimistes</div>
+        <div class="ucard-desc" data-fr="Littérature · Roman" data-en="Literature · Novel" data-cn="文学 · 小说">Littérature · Roman</div>
+        <div class="ucard-sign">by Francis Talistère</div>
       </div>
     </div>
 
     <div id="detail" class="detail">
       <div class="detail-header">
-        <button class="back-btn" onclick="closeUnivers()" data-fr="← Tous les univers" data-en="← All worlds" data-cn="← 返回">← Tous les univers</button>
+        <button class="back-btn" onclick="closeUnivers()" data-fr="← Toutes les collections" data-en="← All collections" data-cn="← 所有作品集">← Toutes les collections</button>
         <div class="detail-title" id="detail-title"></div>
       </div>
       <div id="detail-content"></div>
@@ -692,10 +607,27 @@ body.light .symbole-closing p{color:#222}
       <p data-fr="Le podcast de FrancislArtIste — explorations et coulisses autour des chansons" data-en="The FrancislArtIste podcast — explorations and behind the scenes" data-cn="FrancislArtIste播客 — 探索与幕后">Le podcast de FrancislArtIste — explorations et coulisses autour des chansons</p>
     </div>
     <div class="pembed">
-      <iframe src="https://www.youtube.com/embed/videoseries?list=PLhL-l4q2HQDpbipBATzjM6VcVmSjaOSgg&rel=0" allow="encrypted-media; fullscreen" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/videoseries?list=PLhL-l4q2HQDpbipBATzjM6VcVmSjaOSgg&rel=0" title="Podcast À bon entendeur — playlist YouTube" allow="encrypted-media; fullscreen" allowfullscreen></iframe>
     </div>
     <div style="text-align:center">
       <a href="https://www.youtube.com/playlist?list=PLhL-l4q2HQDpbipBATzjM6VcVmSjaOSgg" target="_blank" rel="noopener" class="ext-link" data-fr="▶ Voir la playlist YouTube" data-en="▶ See YouTube playlist" data-cn="▶ 查看YouTube播放列表">▶ Voir la playlist YouTube</a>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE RADIO -->
+<div id="page-radio" class="page">
+  <div class="section">
+    <div class="podcast-hero">
+      <img class="radio-emblem" src="radio-logo.png" alt="Radio FrancislArtIste"/>
+      <h2 data-fr="Radio FrancislArtIste" data-en="FrancislArtIste Radio" data-cn="FrancislArtIste 电台">Radio FrancislArtIste</h2>
+      <p data-fr="Une sélection de titres, en écoute continue. Lancez la lecture et laissez tourner." data-en="A selection of tracks, playing non-stop. Press play and let it run." data-cn="精选曲目，连续播放。点击播放，让音乐流淌。">Une sélection de titres, en écoute continue. Lancez la lecture et laissez tourner.</p>
+    </div>
+    <div class="pembed">
+      <iframe src="https://www.youtube-nocookie.com/embed/videoseries?list=PLbkcpmJa8LkI&loop=1&rel=0" title="Radio FrancislArtIste — lecture continue" allow="encrypted-media; fullscreen" allowfullscreen></iframe>
+    </div>
+    <div style="text-align:center">
+      <a href="https://www.youtube.com/channel/UCQ-GzEU1bDGxnbz6EVKChRA" target="_blank" rel="noopener" class="ext-link" data-fr="▶ Voir la chaîne YouTube" data-en="▶ See the YouTube channel" data-cn="▶ 查看 YouTube 频道">▶ Voir la chaîne YouTube</a>
     </div>
   </div>
 </div>
@@ -722,13 +654,13 @@ We don't fight, we translate</div>
       </div>
       <div>
         <div class="vid-vert">
-          <iframe src="https://www.youtube.com/embed/JRI9UE60dwA?rel=0" allow="encrypted-media; fullscreen" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/JRI9UE60dwA?rel=0" title="Exemple de création musicale FrancislArtIste" allow="encrypted-media; fullscreen" allowfullscreen></iframe>
         </div>
         <div style="margin-top:1.5rem">
-          <div class="fg"><label data-fr="Prénom / Nom" data-en="Name" data-cn="姓名">Prénom / Nom</label><input type="text" placeholder="Votre nom"/></div>
-          <div class="fg"><label>Email</label><input type="email" placeholder="votre@email.com"/></div>
-          <div class="fg"><label data-fr="Message" data-en="Message" data-cn="留言">Message</label><textarea style="width:100%;background:#0d0d0d;border:1px solid #222;color:#eee;padding:.65rem 1rem;border-radius:8px;font-family:'Lato',sans-serif;font-size:.9rem;resize:vertical" rows="4" placeholder="Votre message..."></textarea></div>
-          <button class="sub-btn" onclick="window.location.href='mailto:francislartiste.contact@gmail.com'" data-fr="ENVOYER" data-en="SEND" data-cn="发送">ENVOYER</button>
+          <div class="fg"><label for="cf-name" data-fr="Prénom / Nom" data-en="Name" data-cn="姓名">Prénom / Nom</label><input id="cf-name" type="text" placeholder="Votre nom"/></div>
+          <div class="fg"><label for="cf-email">Email</label><input id="cf-email" type="email" placeholder="votre@email.com"/></div>
+          <div class="fg"><label for="cf-msg" data-fr="Message" data-en="Message" data-cn="留言">Message</label><textarea id="cf-msg" style="width:100%;background:#0d0d0d;border:1px solid #222;color:#eee;padding:.65rem 1rem;border-radius:8px;font-family:'Lato',sans-serif;font-size:.9rem;resize:vertical" rows="4" placeholder="Votre message..."></textarea></div>
+          <button class="sub-btn" onclick="sendContact()" data-fr="ENVOYER" data-en="SEND" data-cn="发送">ENVOYER</button>
         </div>
       </div>
     </div>
@@ -816,7 +748,7 @@ We don't fight, we translate</div>
       <h2>Tesclar</h2>
       <p data-fr="L'univers le plus électrique de FrancislArtIste. Jazz, funk, électro et bossa — une énergie raffinée, sensuelle et futuriste." data-en="The most electric universe of FrancislArtIste. Jazz, funk, electro and bossa — refined, sensual and futuristic." data-cn="FrancislArtIste最具电气化的宇宙。爵士、放克、电子与波萨诺瓦。">L'univers le plus électrique de FrancislArtIste. Jazz, funk, électro et bossa.</p>
       <div class="cs-video" style="margin-top:1.5rem">
-        <iframe src="https://www.youtube.com/embed/h_gaBCsYdXo?rel=0" allow="encrypted-media; fullscreen" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/h_gaBCsYdXo?rel=0" title="Tesclar — aperçu vidéo" allow="encrypted-media; fullscreen" allowfullscreen></iframe>
       </div>
       <a href="https://www.tesclar.com" target="_blank" rel="noopener" class="ext-link" style="margin-top:1rem">🌐 tesclar.com</a>
     </div>
@@ -839,15 +771,17 @@ We don't fight, we translate</div>
   <div class="footer-grid">
     <div class="fc">
       <h4>FrancislArtIste</h4>
-      <p data-fr="Quatre univers musicaux — du poétique à l'électrique." data-en="Four musical worlds — from poetic to electric." data-cn="四个音乐宇宙。">Quatre univers musicaux.</p>
+      <p data-fr="Créateur d'univers — six collections, une signature." data-en="Universe creator — six collections, one signature." data-cn="宇宙创造者 — 六个作品集，一个签名。">Créateur d'univers — six collections, une signature.</p>
     </div>
     <div class="fc">
-      <h4 data-fr="Univers" data-en="Worlds" data-cn="宇宙">Univers</h4>
+      <h4 data-fr="Collections" data-en="Collections" data-cn="作品集">Collections</h4>
       <ul>
         <li onclick="showPage('univers');openUnivers('poemes')" data-fr="✨ Poèmes en Chanson" data-en="✨ Poems in Song" data-cn="✨ 诗歌之歌">✨ Poèmes en Chanson</li>
         <li onclick="showPage('univers');openUnivers('animaux')" data-fr="🎭 Animaux" data-en="🎭 Animals" data-cn="🎭 灵兽">🎭 Animaux</li>
         <li onclick="showPage('univers');openUnivers('broken')">🎸 Broken Strings</li>
         <li onclick="showPage('univers');openUnivers('tesclar')">⚡ Tesclar</li>
+        <li onclick="showPage('univers');openUnivers('kids')" data-fr="⭐ Kids" data-en="⭐ Kids" data-cn="⭐ 儿童">⭐ Kids</li>
+        <li onclick="showPage('univers');openUnivers('alchimistes')" data-fr="📖 Le Chemin des Alchimistes" data-en="📖 The Path of the Alchemists" data-cn="📖 炼金术士之路">📖 Le Chemin des Alchimistes</li>
       </ul>
     </div>
     <div class="fc">
@@ -855,6 +789,7 @@ We don't fight, we translate</div>
       <ul>
         <li onclick="showPage('paroles')" data-fr="📜 Paroles" data-en="📜 Lyrics" data-cn="📜 歌词">📜 Paroles</li>
         <li onclick="showPage('podcast')">🎙️ À bon entendeur</li>
+        <li onclick="showPage('radio')" data-fr="📻 Radio" data-en="📻 Radio" data-cn="📻 电台">📻 Radio</li>
         <li onclick="showPage('apropos')" data-fr="À propos" data-en="About" data-cn="关于">À propos</li>
         <li onclick="showPage('symbole')" data-fr="📿 Le Symbole" data-en="📿 The Symbol" data-cn="📿 符号">📿 Le Symbole</li>
         <li onclick="showPage('contact')" data-fr="✉️ Contact" data-en="✉️ Contact" data-cn="✉️ 联系">✉️ Contact</li>
@@ -979,6 +914,7 @@ let lang = localStorage.getItem('fa_lang') || 'fr';
 function setLang(l) {
   lang = l;
   localStorage.setItem('fa_lang', l);
+  document.documentElement.lang = (l === 'cn') ? 'zh' : l;
   document.querySelectorAll('[data-'+l+']').forEach(function(el) {
     if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') return;
     el.innerHTML = el.getAttribute('data-'+l);
@@ -994,7 +930,7 @@ function showPage(id) {
   var el = document.getElementById('page-'+id);
   if (el) el.classList.add('active');
   document.querySelectorAll('.nav-btn').forEach(function(b){ b.classList.remove('active'); });
-  var map = {univers:0,paroles:1,podcast:2,contact:3,apropos:4,symbole:5};
+  var map = {univers:0,paroles:1,podcast:2,radio:3,contact:4,apropos:5,symbole:6};
   if (map[id] !== undefined) document.querySelectorAll('.nav-btn')[map[id]].classList.add('active');
   window.scrollTo(0,0);
   closeUnivers();
@@ -1002,7 +938,7 @@ function showPage(id) {
 
 /* ── UNIVERS ── */
 function openUnivers(key) {
-  var titles = {poemes:{fr:'Poèmes en Chanson',en:'Poems in Song',cn:'诗歌之歌'}, animaux:{fr:'Animaux',en:'Animals',cn:'灵兽 (Líng Shòu)'}, broken:{fr:'Broken Strings',en:'Broken Strings',cn:'断弦'}, tesclar:{fr:'Tesclar',en:'Tesclar',cn:'Tesclar'}};
+  var titles = {poemes:{fr:'Poèmes en Chanson',en:'Poems in Song',cn:'诗歌之歌'}, animaux:{fr:'Animaux',en:'Animals',cn:'灵兽 (Líng Shòu)'}, broken:{fr:'Broken Strings',en:'Broken Strings',cn:'断弦'}, tesclar:{fr:'Tesclar',en:'Tesclar',cn:'Tesclar'}, kids:{fr:'Kids',en:'Kids',cn:'儿童'}, alchimistes:{fr:'Le Chemin des Alchimistes',en:'The Path of the Alchemists',cn:'炼金术士之路'}};
   document.getElementById('ugrid').style.display = 'none';
   document.getElementById('detail').style.display = 'block';
   document.getElementById('detail-title').textContent = titles[key][lang] || titles[key].fr;
@@ -1031,6 +967,26 @@ function openUnivers(key) {
     });
     html += '</div>';
     c.innerHTML = html;
+    return;
+  }
+
+  if (key === 'kids') {
+    var kt = {fr:"Des chansons tendres et joyeuses pour rêver, apprendre et grandir ensemble. Une collection pour les petits — et les grands restés enfants.",
+              en:"Tender, joyful songs to dream, learn and grow together. A collection for little ones — and grown-ups still young at heart.",
+              cn:"温柔而欢乐的儿童歌曲，用来做梦、学习、一起成长。献给孩子，也献给心中仍是孩子的大人。"};
+    var kch = {fr:"Chaîne YouTube Kids", en:"Kids YouTube channel", cn:"Kids YouTube 频道"};
+    c.innerHTML = '<p class="cs-desc" style="text-align:center;max-width:560px;margin:0 auto 2rem">' + (kt[lang]||kt.fr) + '</p>'
+      + '<div class="agrid"><a class="acard" href="https://www.youtube.com/playlist?list=OLAK5uy_nw7-58h4y5f-YGUyoVGk7zh2-UL_eShXE" target="_blank" rel="noopener"><div class="acard-thumb" style="background-image:url(Comptines.jpg);background-size:cover;background-position:center"></div><div class="acard-info"><div class="acard-name">Comptines</div><div class="acard-sub">FrancislArtIste</div></div></a></div>'
+      + '<div style="text-align:center;margin-top:1.5rem"><a href="https://www.youtube.com/channel/UC_GTb8m9kBZuU44J8l-2GSg" target="_blank" rel="noopener" class="ext-link">' + (kch[lang]||kch.fr) + '</a></div>';
+    return;
+  }
+
+  if (key === 'alchimistes') {
+    var at = {fr:"« Le Chemin des Alchimistes » — Tome 1 : Jean Petit et les ombres de la nuit. Les aventures d'un jeune héros dans les montagnes du Beaujolais. Un récit signé Francis Talistère.",
+              en:"\"The Path of the Alchemists\" — Volume 1: Jean Petit and the shadows of the night. A young hero's adventures in the Beaujolais mountains. A story signed Francis Talistère.",
+              cn:"《炼金术士之路》第一册：让·珀蒂与夜晚的阴影。一位少年英雄在博若莱山脉的冒险。署名 Francis Talistère。"};
+    var ac = {fr:"🌐 Découvrir sur francistalistere.com", en:"🌐 Discover on francistalistere.com", cn:"🌐 前往 francistalistere.com"};
+    c.innerHTML = '<div class="soon-page"><div style="font-size:3rem;margin-bottom:1rem">📖</div><p class="cs-desc">' + (at[lang]||at.fr) + '</p><a href="https://www.francistalistere.com" target="_blank" rel="noopener" class="ext-link" style="margin-top:1.5rem">' + (ac[lang]||ac.fr) + '</a></div>';
     return;
   }
 
@@ -1071,29 +1027,18 @@ function openLyrics(i) {
 function closeLyrics() { document.getElementById('lmodal').classList.remove('open'); }
 document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeLyrics(); });
 
-
-/* ── INTRO ── */
-var visited = sessionStorage.getItem('fa_visited');
-
-function enterSite() {
-  sessionStorage.setItem('fa_visited', '1');
-  document.getElementById('intro').classList.add('hidden');
+/* ── CONTACT ── */
+function sendContact() {
+  var name = (document.getElementById('cf-name').value || '').trim();
+  var email = (document.getElementById('cf-email').value || '').trim();
+  var msg = (document.getElementById('cf-msg').value || '').trim();
+  var subject = 'Contact site — ' + (name || 'Sans nom');
+  var body = 'Nom : ' + name + '\nEmail : ' + email + '\n\n' + msg;
+  window.location.href = 'mailto:francislartiste.contact@gmail.com'
+    + '?subject=' + encodeURIComponent(subject)
+    + '&body=' + encodeURIComponent(body);
 }
 
-function replayIntro() {
-  document.getElementById('intro').classList.remove('hidden');
-}
-
-if (visited) {
-  enterSite();
-} else {
-  setTimeout(function() {
-    var btn = document.getElementById('intro-enter');
-    var skip = document.getElementById('intro-skip');
-    if (btn) { btn.style.opacity = '1'; btn.style.pointerEvents = 'auto'; }
-    if (skip) { skip.style.opacity = '1'; skip.style.pointerEvents = 'auto'; }
-  }, 5000);
-}
 
 /* ── THEME ── */
 var darkMode = localStorage.getItem('fa_theme') !== 'light';
