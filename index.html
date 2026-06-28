@@ -269,6 +269,12 @@ body.light .ucard:hover .ucard-name{color:#E02020}
 /* PLAYLIST EMBED */
 .pembed{position:relative;width:100%;padding-top:56.25%;border-radius:12px;overflow:hidden;border:1px solid #1a1a1a;margin-bottom:1rem}
 .pembed iframe{position:absolute;inset:0;width:100%;height:100%;border:none}
+.pembed #radio-yt{position:absolute;inset:0;width:100%;height:100%}
+.radio-now{text-align:center;margin-top:.2rem;font-size:.85rem;color:#aaa}
+.radio-now-label{color:#E02020;font-weight:700;letter-spacing:.04em;font-family:'Montserrat',sans-serif;font-size:.72rem;text-transform:uppercase}
+#radio-now-title{color:#eee}
+.radio-next{margin-top:.25rem;font-size:.8rem}
+#radio-next-title{color:#aaa}
 
 /* CONTACT FORM */
 .fg{margin-bottom:.8rem;text-align:left}
@@ -623,8 +629,10 @@ body.light .symbole-closing p{color:#222}
       <h2 data-fr="Radio FrancislArtIste" data-en="FrancislArtIste Radio" data-cn="FrancislArtIste 电台">Radio FrancislArtIste</h2>
       <p data-fr="Une sélection de titres, en écoute continue. Lancez la lecture et laissez tourner." data-en="A selection of tracks, playing non-stop. Press play and let it run." data-cn="精选曲目，连续播放。点击播放，让音乐流淌。">Une sélection de titres, en écoute continue. Lancez la lecture et laissez tourner.</p>
     </div>
-    <div class="pembed">
-      <iframe src="https://www.youtube-nocookie.com/embed/videoseries?list=PLbkcpmJa8LkI&loop=1&rel=0" title="Radio FrancislArtIste — lecture continue" allow="encrypted-media; fullscreen" allowfullscreen></iframe>
+    <div class="pembed"><div id="radio-yt"></div></div>
+    <div class="radio-now">
+      <div><span class="radio-now-label" data-fr="En lecture :" data-en="Now playing:" data-cn="正在播放：">En lecture :</span> <span id="radio-now-title">—</span></div>
+      <div class="radio-next"><span class="radio-now-label" data-fr="À suivre :" data-en="Up next:" data-cn="即将播放：">À suivre :</span> <span id="radio-next-title">—</span></div>
     </div>
     <div style="text-align:center">
       <a href="https://www.youtube.com/channel/UCQ-GzEU1bDGxnbz6EVKChRA" target="_blank" rel="noopener" class="ext-link" data-fr="▶ Voir la chaîne YouTube" data-en="▶ See the YouTube channel" data-cn="▶ 查看 YouTube 频道">▶ Voir la chaîne YouTube</a>
@@ -933,7 +941,60 @@ function showPage(id) {
   var map = {univers:0,paroles:1,podcast:2,radio:3,contact:4,apropos:5,symbole:6};
   if (map[id] !== undefined) document.querySelectorAll('.nav-btn')[map[id]].classList.add('active');
   window.scrollTo(0,0);
+  if (id === 'radio') loadRadio();
   closeUnivers();
+}
+
+/* ── RADIO (lecteur continu, aléatoire géré côté site, titre à suivre) ── */
+var radioReady = false, radioPlayer = null, radioOrder = [], radioPos = 0, radioTitleCache = {};
+function loadRadio() {
+  if (radioReady) return;
+  radioReady = true;
+  var t = document.createElement('script');
+  t.src = 'https://www.youtube.com/iframe_api';
+  document.head.appendChild(t);
+}
+window.onYouTubeIframeAPIReady = function() {
+  radioPlayer = new YT.Player('radio-yt', {
+    width: '100%', height: '100%',
+    playerVars: { listType: 'playlist', list: 'PLbkcpmJa8LkI', rel: 0, modestbranding: 1, playsinline: 1 },
+    events: {
+      onReady: function(e) {
+        try {
+          var ids = e.target.getPlaylist() || [];
+          for (var i = ids.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var tmp = ids[i]; ids[i] = ids[j]; ids[j] = tmp; }
+          radioOrder = ids; radioPos = 0;
+          if (radioOrder.length) e.target.cueVideoById(radioOrder[0]);
+        } catch(_) {}
+        radioNow();
+      },
+      onStateChange: function(e) {
+        radioNow();
+        if (e.data === YT.PlayerState.ENDED && radioOrder.length) {
+          radioPos = (radioPos + 1) % radioOrder.length;
+          try { radioPlayer.loadVideoById(radioOrder[radioPos]); } catch(_) {}
+        }
+      }
+    }
+  });
+};
+function radioNow() {
+  try {
+    var d = radioPlayer.getVideoData();
+    var cur = document.getElementById('radio-now-title');
+    if (cur && d && d.title) cur.textContent = d.title;
+  } catch(_) {}
+  if (radioOrder.length) {
+    var nextId = radioOrder[(radioPos + 1) % radioOrder.length];
+    radioTitle(nextId, function(t) { var nx = document.getElementById('radio-next-title'); if (nx) nx.textContent = t || '—'; });
+  }
+}
+function radioTitle(id, cb) {
+  if (radioTitleCache[id] !== undefined) { cb(radioTitleCache[id]); return; }
+  fetch('https://noembed.com/embed?url=https://youtu.be/' + id)
+    .then(function(r) { return r.json(); })
+    .then(function(j) { radioTitleCache[id] = j.title || ''; cb(radioTitleCache[id]); })
+    .catch(function() { radioTitleCache[id] = ''; cb(''); });
 }
 
 /* ── UNIVERS ── */
