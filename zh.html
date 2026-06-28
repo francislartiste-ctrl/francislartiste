@@ -206,6 +206,38 @@ body:not(.light) .hero-banner .hero-logo{mix-blend-mode:screen}
 .sec-label{font-size:.65rem;letter-spacing:.25em;text-transform:uppercase;color:#E02020;margin-bottom:.6rem}
 .sec-title{font-family:'Montserrat',sans-serif;font-size:1.6rem;font-weight:700;margin-bottom:2rem}
 
+/* À LA UNE — lecteur audio */
+.alaune{max-width:1300px;margin:0 auto;padding:0 2rem 1.5rem}
+.alaune-card{position:relative;overflow:hidden;border:1px solid rgba(224,32,32,.25);border-radius:16px;padding:1.4rem 1.6rem;background:radial-gradient(1.5px 1.5px at 18% 28%,rgba(255,255,255,.6),transparent),radial-gradient(1px 1px at 68% 18%,rgba(212,175,55,.55),transparent),radial-gradient(1px 1px at 42% 72%,rgba(255,255,255,.45),transparent),radial-gradient(1.4px 1.4px at 85% 58%,rgba(255,255,255,.4),transparent),radial-gradient(1.4px 1.4px at 58% 88%,rgba(212,175,55,.45),transparent),radial-gradient(1px 1px at 9% 78%,rgba(255,255,255,.35),transparent),radial-gradient(1px 1px at 90% 38%,rgba(255,255,255,.3),transparent),linear-gradient(180deg,#150707,#0d0d0d)}
+.alaune-head{margin-bottom:1rem;position:relative}
+.alaune-tag{display:inline-block;font-family:'Montserrat',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#E02020;margin-right:.5rem}
+.alaune-sub{font-size:.8rem;color:#888}
+.wave{display:inline-flex;align-items:flex-end;gap:2px;height:.85rem;margin-right:.6rem;vertical-align:-.1rem}
+.wave i{width:3px;border-radius:2px;background:#E02020;height:30%;animation:waveb 1s ease-in-out infinite}
+.wave i:nth-child(2){animation-delay:.15s}
+.wave i:nth-child(3){animation-delay:.3s}
+.wave i:nth-child(4){animation-delay:.45s}
+.wave i:nth-child(5){animation-delay:.6s}
+@keyframes waveb{0%,100%{height:25%}50%{height:100%}}
+.aplayer{display:flex;align-items:center;gap:1rem}
+.ap-play{width:3.4rem;height:3.4rem;border-radius:50%;border:1px solid rgba(212,175,55,.55);background:#000 center/cover url(Play-radio.jpg);color:#fff;font-size:1.05rem;cursor:pointer;flex-shrink:0;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(224,32,32,.45);transition:transform .15s,box-shadow .2s;text-shadow:0 0 6px rgba(0,0,0,.95),0 1px 2px rgba(0,0,0,.9)}
+.ap-play:hover{transform:scale(1.07);box-shadow:0 6px 22px rgba(224,32,32,.6)}
+.ap-play:active{transform:scale(.97)}
+.ap-info{flex:1;min-width:0}
+.ap-now{font-family:'Montserrat',sans-serif;font-weight:700;font-size:1rem;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ap-artist{font-size:.72rem;color:#666}
+.ap-ctrl{background:none;border:1px solid #333;color:#aaa;width:2.4rem;height:2.4rem;border-radius:50%;cursor:pointer;font-size:.8rem;transition:all .2s;flex-shrink:0}
+.ap-ctrl:hover{border-color:#E02020;color:#E02020}
+.ap-list{list-style:none;margin:1rem 0 0;padding:0;counter-reset:ap}
+.ap-list li{display:flex;align-items:center;gap:.7rem;padding:.5rem .6rem;border-radius:8px;cursor:pointer;font-size:.85rem;color:#bbb;transition:background .2s,color .2s}
+.ap-list li:hover{background:rgba(255,255,255,.05);color:#fff}
+.ap-list li.active{color:#E02020}
+.ap-list li::before{counter-increment:ap;content:counter(ap);font-size:.7rem;color:#555;min-width:1.2rem}
+body.light .alaune-card{background:#fff;border-color:rgba(224,32,32,.25)}
+body.light .ap-now{color:#111}
+body.light .ap-list li{color:#444}
+@media(max-width:600px){.alaune{padding:0 1rem 1.5rem}.alaune-card{padding:1.1rem}}
+
 /* COLLECTIONS — PLANÈTES */
 .ugrid{display:grid;grid-template-columns:repeat(6,1fr);gap:1.4rem;margin:0 auto 3rem;max-width:1300px}
 .ucard{background:none;border:none;cursor:pointer;text-align:center;display:flex;flex-direction:column;align-items:center;gap:.6rem}
@@ -537,6 +569,28 @@ body.light .symbole-closing p{color:#222}
     <p data-fr="Six collections, une signature. De la chanson à la littérature, une même âme : l'émotion née du vécu." data-en="Six collections, one signature. From song to literature, one soul: emotion born from lived experience." data-cn="六个作品集，一个签名。从歌曲到文学，同一个灵魂：源于生活的情感。">Six collections, une signature. De la chanson à la littérature, une même âme : l'émotion née du vécu.</p>
     <button class="hero-cta" onclick="document.getElementById('ugrid').scrollIntoView({behavior:'smooth'})" data-fr="Découvrir les collections ↓" data-en="Discover the collections ↓" data-cn="探索作品集 ↓">Découvrir les collections ↓</button>
   </div>
+
+  <!-- À LA UNE -->
+  <section class="alaune">
+    <div class="alaune-card">
+      <div class="alaune-head">
+        <span class="wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+        <span class="alaune-tag" data-fr="À la une · Juillet" data-en="Featured · July" data-cn="本月精选 · 七月">À la une · Juillet</span>
+        <span class="alaune-sub" data-fr="Les nouveautés du mois — le son continue même écran éteint." data-en="This month's new tracks — keeps playing even with the screen off." data-cn="本月新曲 — 息屏也能继续播放。">Les nouveautés du mois — le son continue même écran éteint.</span>
+      </div>
+      <div class="aplayer">
+        <button id="ap-toggle" class="ap-play" onclick="apToggle()" aria-label="Lecture / Pause"></button>
+        <div class="ap-info">
+          <div class="ap-now" id="ap-title">—</div>
+          <div class="ap-artist">FrancislArtIste · <span id="ap-pos"></span></div>
+        </div>
+        <button class="ap-ctrl" onclick="apPrev()" aria-label="Précédent">⏮</button>
+        <button class="ap-ctrl" onclick="apNext()" aria-label="Suivant">⏭</button>
+      </div>
+      <ol class="ap-list" id="ap-list"></ol>
+    </div>
+  </section>
+
   <div class="section">
     <div id="ugrid" class="ugrid">
       <div class="ucard" onclick="openUnivers('poemes')">
@@ -1101,6 +1155,49 @@ function sendContact() {
 }
 
 
+/* ── À LA UNE (lecteur audio MP3 + lecture arrière-plan via Media Session) ── */
+var AP = [
+  { t: "À deux nous serons trois", f: "radio/a-deux-nous-serons-trois.mp3" },
+  { t: "Susurros en la Piel", f: "radio/susurros-en-la-piel.mp3" },
+  { t: "Butterfly", f: "radio/butterfly.mp3" },
+  { t: "Entre la racine et la pousse", f: "radio/entre-la-racine-et-la-pousse.mp3" }
+];
+var apAudio = new Audio(), apIdx = 0;
+apAudio.preload = 'none';
+apAudio.addEventListener('ended', function() { apNext(); });
+apAudio.addEventListener('play', function() { apIcon(true); });
+apAudio.addEventListener('pause', function() { apIcon(false); });
+function apInit() {
+  var ol = document.getElementById('ap-list');
+  if (!ol) return;
+  ol.innerHTML = AP.map(function(x, i) { return '<li id="ap-li-' + i + '" onclick="apSelect(' + i + ')">' + x.t + '</li>'; }).join('');
+  apLoad(0, false);
+}
+function apLoad(i, play) {
+  apIdx = (i % AP.length + AP.length) % AP.length;
+  apAudio.src = AP[apIdx].f;
+  var ti = document.getElementById('ap-title'); if (ti) ti.textContent = AP[apIdx].t;
+  var po = document.getElementById('ap-pos'); if (po) po.textContent = (apIdx + 1) + '/' + AP.length;
+  for (var j = 0; j < AP.length; j++) { var li = document.getElementById('ap-li-' + j); if (li) li.classList.toggle('active', j === apIdx); }
+  apMedia();
+  if (play) { var p = apAudio.play(); if (p && p.catch) p.catch(function(){}); }
+}
+function apToggle() { if (apAudio.paused) apLoad(apIdx, true); else apAudio.pause(); }
+function apNext() { apLoad(apIdx + 1, true); }
+function apPrev() { apLoad(apIdx - 1, true); }
+function apSelect(i) { apLoad(i, true); }
+function apIcon(on) { var b = document.getElementById('ap-toggle'); if (b) b.textContent = on ? '⏸' : '▶'; }
+function apMedia() {
+  if (!('mediaSession' in navigator)) return;
+  try {
+    navigator.mediaSession.metadata = new MediaMetadata({ title: AP[apIdx].t, artist: 'FrancislArtIste', album: 'À la une', artwork: [{ src: 'logo.png', sizes: '512x512', type: 'image/png' }] });
+    navigator.mediaSession.setActionHandler('play', function() { apLoad(apIdx, true); });
+    navigator.mediaSession.setActionHandler('pause', function() { apAudio.pause(); });
+    navigator.mediaSession.setActionHandler('nexttrack', apNext);
+    navigator.mediaSession.setActionHandler('previoustrack', apPrev);
+  } catch(_) {}
+}
+
 /* ── THEME ── */
 var darkMode = localStorage.getItem('fa_theme') !== 'light';
 function applyTheme() {
@@ -1123,6 +1220,7 @@ applyTheme();
 /* ── INIT ── */
 setLang(lang);
 showParoles();
+apInit();
 </script>
 </body>
 </html>
