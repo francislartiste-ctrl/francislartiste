@@ -219,6 +219,18 @@ body:not(.light) .hero-banner .hero-logo{mix-blend-mode:screen}
 .wave i:nth-child(4){animation-delay:.45s}
 .wave i:nth-child(5){animation-delay:.6s}
 @keyframes waveb{0%,100%{height:25%}50%{height:100%}}
+.alaune-card{display:flex;gap:0;align-items:stretch}
+.alaune-main{flex:1;min-width:0}
+.alaune-news{width:300px;flex-shrink:0;border-left:1px solid rgba(224,32,32,.2);margin-left:1.8rem;padding-left:1.8rem}
+.news-tag{display:inline-block;font-family:'Montserrat',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#E02020;margin-bottom:1rem}
+.news-item{display:flex;gap:.9rem;align-items:center;text-decoration:none}
+.news-cover{width:64px;height:64px;border-radius:8px;object-fit:cover;flex-shrink:0;border:1px solid #222}
+.news-kicker{font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:#E02020;margin-bottom:.15rem}
+.news-title{font-family:'Montserrat',sans-serif;font-weight:700;font-size:1rem;color:#fff;line-height:1.2;transition:color .2s}
+.news-item:hover .news-title{color:#E02020}
+.news-sub{font-size:.75rem;color:#888;margin-top:.15rem}
+body.light .news-title{color:#111}
+@media(max-width:820px){.alaune-card{flex-direction:column}.alaune-news{width:auto;border-left:none;margin-left:0;padding-left:0;border-top:1px solid rgba(224,32,32,.2);margin-top:1.2rem;padding-top:1.2rem}}
 .aplayer{display:flex;align-items:center;gap:1rem}
 .ap-play{position:relative;overflow:hidden;padding:0;width:3.4rem;height:3.4rem;border-radius:50%;border:1px solid rgba(212,175,55,.55);background:#000;cursor:pointer;flex-shrink:0;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(224,32,32,.45);transition:transform .15s,box-shadow .2s}
 .ap-play-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
@@ -575,6 +587,7 @@ body.light .symbole-closing p{color:#222}
   <!-- À LA UNE -->
   <section class="alaune">
     <div class="alaune-card">
+      <div class="alaune-main">
       <div class="alaune-head">
         <span class="wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
         <span class="alaune-tag" data-fr="À la une · Juillet" data-en="Featured · July" data-cn="本月精选 · 七月">À la une · Juillet</span>
@@ -590,6 +603,18 @@ body.light .symbole-closing p{color:#222}
         <button class="ap-ctrl" onclick="apNext()" aria-label="Suivant">⏭</button>
       </div>
       <ol class="ap-list" id="ap-list"></ol>
+      </div>
+      <aside class="alaune-news">
+        <div class="news-tag" data-fr="News · Juillet" data-en="News · July" data-cn="新闻 · 七月">News · Juillet</div>
+        <a class="news-item" href="https://www.youtube.com/playlist?list=OLAK5uy_mdYJ6cZ-a5i6Wk4r8AlCvqdz5ROMyeHUg" target="_blank" rel="noopener">
+          <img class="news-cover" src="album-beyond-the-disco.jpg" alt="Beyond the Disco — Tesclar"/>
+          <div>
+            <div class="news-kicker" data-fr="Sortie de l'album" data-en="New album out" data-cn="新专辑发行">Sortie de l'album</div>
+            <div class="news-title">Beyond the Disco</div>
+            <div class="news-sub">Tesclar · by FrancislArtIste</div>
+          </div>
+        </a>
+      </aside>
     </div>
   </section>
 
