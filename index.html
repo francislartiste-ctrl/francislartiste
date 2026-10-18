@@ -1295,6 +1295,20 @@ applyTheme();
 
 /* ── INIT ── */
 setLang(lang);
+
+/* Lien direct vers des paroles : …/#paroles ou …/#paroles/<titre-en-slug> */
+(function(){
+  function slug(t){return t.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[’']/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');}
+  function ouvrir(){
+    var h=decodeURIComponent(location.hash||'');
+    if(h.indexOf('#paroles')!==0) return;
+    showPage('paroles');
+    var s=h.split('/')[1]; if(!s) return;
+    for(var ai=0;ai<PAROLES_DATA.length;ai++){var so=PAROLES_DATA[ai].songs;
+      for(var si=0;si<so.length;si++){ if(!so[si].inst && slug(so[si].t)===s){ openLyrics(ai,si); return; } } }
+  }
+  window.addEventListener('hashchange',ouvrir); ouvrir();
+})();
 showParoles();
 apInit();
 </script>
