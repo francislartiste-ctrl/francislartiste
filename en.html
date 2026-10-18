@@ -186,8 +186,9 @@ header{background:#0a0a0a;border-bottom:1px solid #222;padding:1rem 2rem;display
 .logo-text{font-family:'Montserrat',sans-serif;font-size:1.3rem;font-weight:900;color:#E02020}
 .logo-sub{font-size:.65rem;color:#666;letter-spacing:.15em;text-transform:uppercase}
 nav{display:flex;align-items:center;gap:.4rem;flex-wrap:wrap}
-.nav-btn{background:none;border:1px solid #333;color:#aaa;padding:.4rem 1rem;border-radius:50px;cursor:pointer;font-family:'Lato',sans-serif;font-size:.82rem;transition:all .2s}
-.nav-btn:hover{border-color:#E02020;color:#fff}
+.nav-btn,.nav-link{background:none;border:1px solid #333;color:#aaa;padding:.4rem 1rem;border-radius:50px;cursor:pointer;font-family:'Lato',sans-serif;font-size:.82rem;transition:all .2s}
+.nav-btn:hover,.nav-link:hover{border-color:#E02020;color:#fff}
+.nav-link{text-decoration:none;display:inline-block}
 .nav-btn.active{border-color:#E02020;color:#E02020;background:rgba(224,32,32,.1)}
 .nav-btn.soon{color:#444;border-color:#222;cursor:default}
 .nav-btn.soon:hover{border-color:#222;color:#444;background:none}
@@ -414,8 +415,8 @@ footer{background:#0a0a0a;border-top:1px solid #111;margin-top:4rem}
 body.light{background:#f5f5f5;color:#111}
 body.light header{background:#fff;border-bottom-color:#ddd}
 body.light .logo-text{color:#c00}
-body.light .nav-btn{border-color:#ddd;color:#555}
-body.light .nav-btn:hover{border-color:#c00;color:#111}
+body.light .nav-btn,body.light .nav-link{border-color:#ddd;color:#555}
+body.light .nav-btn:hover,body.light .nav-link:hover{border-color:#c00;color:#111}
 body.light .nav-btn.active{border-color:#c00;color:#c00;background:rgba(200,0,0,.08)}
 body.light .nav-btn.soon{color:#ccc;border-color:#eee}
 body.light .hero{border-bottom-color:#e0e0e0}
@@ -493,7 +494,7 @@ body.light .symbole-closing p{color:#222}
 @media(max-width:600px){
   header{padding:.8rem 1rem}
   nav{gap:.2rem}
-  .nav-btn{font-size:.72rem;padding:.3rem .7rem}
+  .nav-btn,.nav-link{font-size:.72rem;padding:.3rem .7rem}
 }
 
 @media(prefers-reduced-motion:reduce){
@@ -600,6 +601,7 @@ body.light .livre-text{color:#333}
   <nav>
     <button class="nav-btn active" onclick="showPage('univers')" data-fr="Collections" data-en="Collections" data-cn="作品集">Collections</button>
     <button class="nav-btn" onclick="showPage('paroles')" data-fr="Paroles" data-en="Lyrics" data-cn="歌词">Lyrics</button>
+    <a class="nav-link" href="chansons/" data-fr="Chansons" data-en="Songs" data-cn="歌曲">Songs</a>
     <button class="nav-btn" onclick="showPage('podcast')">À bon entendeur</button>
     <button class="nav-btn" onclick="showPage('radio')" data-fr="<img class='nav-radio-ico' src='radio-logo.png' alt=''/>Radio" data-en="<img class='nav-radio-ico' src='radio-logo.png' alt=''/>Radio" data-cn="<img class='nav-radio-ico' src='radio-logo.png' alt=''/>电台"><img class='nav-radio-ico' src='radio-logo.png' alt=''/>Radio</button>
     <button class="nav-btn" onclick="showPage('contact')" data-fr="Contact" data-en="Contact" data-cn="联系">Contact</button>
