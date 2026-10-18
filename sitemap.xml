@@ -3,7 +3,7 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://francislartiste.com/</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://francislartiste.com/"/>
@@ -13,7 +13,7 @@
   </url>
   <url>
     <loc>https://francislartiste.com/en.html</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://francislartiste.com/"/>
@@ -23,12 +23,42 @@
   </url>
   <url>
     <loc>https://francislartiste.com/zh.html</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://francislartiste.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://francislartiste.com/en.html"/>
     <xhtml:link rel="alternate" hreflang="zh" href="https://francislartiste.com/zh.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://francislartiste.com/"/>
+  </url>
+  <url>
+    <loc>https://francislartiste.com/chansons/</loc>
+    <lastmod>2026-10-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://francislartiste.com/univers/tesclar/</loc>
+    <lastmod>2026-10-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://francislartiste.com/univers/broken-strings/</loc>
+    <lastmod>2026-10-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://francislartiste.com/chansons/la-chasse-au-filet/</loc>
+    <lastmod>2026-10-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://francislartiste.com/chansons/its-meant-to-be-that-way/</loc>
+    <lastmod>2026-10-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>
