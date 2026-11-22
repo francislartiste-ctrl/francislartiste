@@ -1375,8 +1375,8 @@ setLang(lang);
     var h=decodeURIComponent(location.hash||'');
     if(h.indexOf('#paroles')!==0) return;
     showPage('paroles');
-    var s=h.split('/')[1]; if(!s) return;
-    for(var ai=0;ai<PAROLES_DATA.length;ai++){var so=PAROLES_DATA[ai].songs;
+    var pp=h.split('/'), s=pp[pp.length-1], alb=pp.length>2?pp[1]:null; if(!s||pp.length<2) return;
+    for(var ai=0;ai<PAROLES_DATA.length;ai++){var so=PAROLES_DATA[ai].songs; if(alb && slug(PAROLES_DATA[ai].album||'')!==alb) continue;
       for(var si=0;si<so.length;si++){ if(!so[si].inst && slug(so[si].t)===s){ openLyrics(ai,si); return; } } }
   }
   window.addEventListener('hashchange',ouvrir); ouvrir();
