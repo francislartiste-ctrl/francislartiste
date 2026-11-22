@@ -33,19 +33,19 @@
   </url>
   <url>
     <loc>https://francislartiste.com/chansons/</loc>
-    <lastmod>2026-11-16</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://francislartiste.com/univers/tesclar/</loc>
-    <lastmod>2026-11-15</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://francislartiste.com/univers/broken-strings/</loc>
-    <lastmod>2026-10-18</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -57,73 +57,211 @@
   </url>
   <url>
     <loc>https://francislartiste.com/chansons/its-meant-to-be-that-way/</loc>
-    <lastmod>2026-11-16</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://francislartiste.com/chansons/petite-ame/</loc>
-    <lastmod>2026-11-16</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://francislartiste.com/chansons/match-parfait/</loc>
-    <lastmod>2026-11-16</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://francislartiste.com/chansons/longue-distance/</loc>
-    <lastmod>2026-11-16</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://francislartiste.com/chansons/toi/</loc>
-    <lastmod>2026-11-16</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://francislartiste.com/chansons/un-jour-sans-faim/</loc>
-    <lastmod>2026-11-16</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://francislartiste.com/chansons/apres-l-eternel/</loc>
-    <lastmod>2026-11-16</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://francislartiste.com/chansons/anamere/</loc>
-    <lastmod>2026-11-16</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://francislartiste.com/chansons/le-loup-noir-et-le-loup-blanc/</loc>
-    <lastmod>2026-11-16</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://francislartiste.com/chansons/guru-au-gourou/</loc>
-    <lastmod>2026-11-16</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://francislartiste.com/chansons/electric-surge/</loc>
-    <lastmod>2026-11-16</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://francislartiste.com/chansons/mon-accord/</loc>
-    <lastmod>2026-11-16</lastmod>
+    <lastmod>2026-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://francislartiste.com/chansons/pour-que-tu-puisses-rever/</loc>
+    <lastmod>2026-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://francislartiste.com/chansons/la-vie-en-harmonie/</loc>
+    <lastmod>2026-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://francislartiste.com/chansons/jardin-d-amour/</loc>
+    <lastmod>2026-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://francislartiste.com/chansons/la-solitude/</loc>
+    <lastmod>2026-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://francislartiste.com/chansons/orthographe/</loc>
+    <lastmod>2026-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://francislartiste.com/chansons/vide-de-nous/</loc>
+    <lastmod>2026-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://francislartiste.com/chansons/ce-soir/</loc>
+    <lastmod>2026-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://francislartiste.com/chansons/le-silence/</loc>
+    <lastmod>2026-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://francislartiste.com/chansons/la-bouee/</loc>
+    <lastmod>2026-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://francislartiste.com/chansons/mon-ange-garde/</loc>
+    <lastmod>2026-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://francislartiste.com/chansons/maman/</loc>
+    <lastmod>2026-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://francislartiste.com/chansons/le-coeur-d-une-mere/</loc>
+    <lastmod>2026-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://francislartiste.com/chansons/non-merci/</loc>
+    <lastmod>2026-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://francislartiste.com/chansons/souveraine/</loc>
+    <lastmod>2026-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://francislartiste.com/chansons/douleur/</loc>
+    <lastmod>2026-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://francislartiste.com/chansons/quarante-jours-de-desert/</loc>
+    <lastmod>2026-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://francislartiste.com/chansons/de-l-avoir-a-l-etre/</loc>
+    <lastmod>2026-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://francislartiste.com/chansons/culpabilite/</loc>
+    <lastmod>2026-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://francislartiste.com/chansons/origami/</loc>
+    <lastmod>2026-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://francislartiste.com/chansons/trouver-ma-place/</loc>
+    <lastmod>2026-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://francislartiste.com/chansons/pardon/</loc>
+    <lastmod>2026-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://francislartiste.com/chansons/enjoy-the-day/</loc>
+    <lastmod>2026-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://francislartiste.com/chansons/i-build-my-dream/</loc>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
